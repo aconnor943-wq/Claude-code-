@@ -1,0 +1,26 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-22T23:33:45.456Z",
+        "reason": "Claude: background matched to the venue's limestone walls in the supplied footage"
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-22T23:33:51.315Z",
+        "reason": "Claude: the only glows are the open-now dot and footer monogram, echoing the venue's gold neon sign"
+      }
+    ]
+  }
+}
