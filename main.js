@@ -36,6 +36,19 @@
     vio.observe(lazy);
   }
 
+  // Hide the booking fallback note once OpenTable's widget iframe is in place
+  const booking = document.querySelector('[data-booking]');
+  if (booking) {
+    const markLoaded = () => {
+      if (booking.querySelector('iframe')) { booking.classList.add('is-loaded'); return true; }
+      return false;
+    };
+    if (!markLoaded()) {
+      const mo = new MutationObserver(() => { if (markLoaded()) mo.disconnect(); });
+      mo.observe(booking, { childList: true, subtree: true });
+    }
+  }
+
   // Opening hours, in Gold Coast time (Queensland has no daylight saving: UTC+10)
   const HOURS = { 0: [11.5, 20], 1: [12, 21], 2: [12, 21], 3: [12, 21], 4: [12, 21], 5: [12, 23], 6: [11.5, 23] };
   const fmt = (h) => {

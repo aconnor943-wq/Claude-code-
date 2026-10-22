@@ -252,6 +252,27 @@ figcaption {
 }
 .terrace__inner p:not(.eyebrow) { max-width: 27rem; }
 
+/* ---------- book ---------- */
+.book { background: var(--ink-2); color: rgba(244,239,231,.82); scroll-margin-top: 3rem; }
+.book__inner {
+  max-width: var(--max); margin: 0 auto;
+  padding: clamp(5rem, 11vw, 8.5rem) var(--gutter);
+  display: grid; grid-template-columns: 5fr 7fr; gap: clamp(2.5rem, 6vw, 6rem); align-items: center;
+}
+.book__text p:not(.eyebrow) { max-width: 26rem; }
+.book__small { font-size: .88rem; color: rgba(244,239,231,.66); }
+.book__widget {
+  background: var(--bone); color: var(--text);
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+  min-height: 22rem;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  border-top: 2px solid var(--brass-hi);
+}
+.book__widget iframe { width: 100% !important; max-width: 100%; border: 0; }
+.book__fallback { margin: 0; text-align: center; font-size: .92rem; color: var(--muted); max-width: 22rem; }
+.book__fallback a { color: var(--ink); }
+.book__widget.is-loaded .book__fallback { display: none; }
+
 /* ---------- visit ---------- */
 .visit { display: grid; grid-template-columns: 6fr 5fr; gap: clamp(2.5rem, 6vw, 6rem); align-items: center; }
 .hours { margin: 0 0 1rem; max-width: 30rem; }
@@ -296,7 +317,7 @@ figcaption {
 /* ---------- responsive ---------- */
 @media (max-width: 960px) {
   .nav__links { display: none; }
-  .intro, .bar__lead, .visit { grid-template-columns: 1fr; }
+  .intro, .bar__lead, .visit, .book__inner { grid-template-columns: 1fr; }
   .visit__media { order: -1; }
 }
 @media (max-width: 720px) {
