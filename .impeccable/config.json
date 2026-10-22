@@ -20,6 +20,24 @@
         ],
         "createdAt": "2026-10-22T23:33:51.315Z",
         "reason": "Claude: the only glows are the open-now dot and footer monogram, echoing the venue's gold neon sign"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-22T23:38:24.151Z",
+        "reason": "Claude: false positive - detector ignores stylesheet padding; rendered screenshots show every flagged section/row inset by gutters or clamp() padding"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-22T23:38:24.162Z",
+        "reason": "Claude: false positive - detector reads h1/h2 as 16px without styles.css; rendered h1 is clamp(3rem..7.6rem), h2 clamp(2.4rem..4.6rem)"
       }
     ]
   }
