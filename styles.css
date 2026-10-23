@@ -90,7 +90,13 @@ html { scrollbar-color: var(--lamp-muted) var(--black); }
 
 .chapter-day { background: var(--ground); color: var(--ground-ink); transition: background-color var(--light) var(--ease), color var(--light) var(--ease); }
 .chapter-day img { transition: filter var(--light) var(--ease); }
-[data-light="night"] .chapter-day img { filter: brightness(.82) saturate(.92); }
+[data-light="night"] .chapter-day img:not(.night-layer) { filter: brightness(.82) saturate(.92); }
+
+/* night photographs: laid over their daytime frame and faded in when the lights go down */
+.photo { position: relative; display: block; }
+.plate__frame .photo { grid-area: 1 / 1; }
+.night-layer { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity var(--light) var(--ease); }
+[data-light="night"] .is-in ~ .night-layer.is-ready, [data-light="night"] img:not(.wipe) ~ .night-layer.is-ready { opacity: 1; }
 
 /* ---------- top bar ---------- */
 .bar-top {

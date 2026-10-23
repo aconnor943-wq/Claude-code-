@@ -17,8 +17,32 @@
       else if (v.dataset.lightVideo !== light) setTimeout(() => v.pause(), 1700);
     });
   };
+  // Each photograph can carry a night version (data-night). It is fetched the first time the lights go down;
+  // a missing file simply leaves the dimmed daytime photograph in place.
+  const nightPhotos = [...document.querySelectorAll('img[data-night]')].map((img) => {
+    const wrap = document.createElement('span');
+    wrap.className = 'photo';
+    img.replaceWith(wrap);
+    wrap.appendChild(img);
+    return img;
+  });
+  const loadNightPhotos = () => nightPhotos.forEach((img) => {
+    if (img.dataset.nightTried) return;
+    img.dataset.nightTried = '1';
+    const layer = new Image();
+    layer.className = 'night-layer';
+    layer.alt = '';
+    layer.setAttribute('aria-hidden', 'true');
+    layer.decoding = 'async';
+    layer.onload = () => layer.classList.add('is-ready');
+    layer.onerror = () => layer.remove();
+    layer.src = img.dataset.night;
+    img.after(layer);
+  });
+
   const setLight = (light, remember) => {
     root.dataset.light = light;
+    if (light === 'night') loadNightPhotos();
     switches.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.setLight === light)));
     if (remember) { try { sessionStorage.setItem('light', light); } catch (e) {} }
     playFor(light);
