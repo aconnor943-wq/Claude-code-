@@ -38,7 +38,17 @@
         ],
         "createdAt": "2026-10-22T23:38:24.162Z",
         "reason": "Claude: false positive - detector reads h1/h2 as 16px without styles.css; rendered h1 is clamp(3rem..7.6rem), h2 clamp(2.4rem..4.6rem)"
+      },
+      {
+        "rule": "buried-raster",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-23T04:48:12.590Z",
+        "reason": "Claude: the second plate-tab photo (calamari) is hidden until its tab is chosen; verified it shows on tab click"
       }
     ]
-  }
+  },
+  "buildPath": "code"
 }
