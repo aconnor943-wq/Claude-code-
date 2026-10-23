@@ -1,0 +1,250 @@
+{
+  "slug": "demo-restaurant",
+  "_note": "Demo hospitality client with made-up details. Bookings and covers come from the booking system's daily export, sales from the POS.",
+  "business": {
+    "name": "Esplanade Kitchen",
+    "niche": "restaurant and cocktail bar",
+    "location": "Paradise Point, Gold Coast QLD",
+    "sites_staff": "1 venue, 90 seats, about 25 staff",
+    "owner_name": "Alex Morgan",
+    "owner_email": "owner@example.com",
+    "owner_mobile": "+61 400 000 000",
+    "timezone": "Australia/Brisbane",
+    "currency": "AUD",
+    "google_account": "reporting@example.com",
+    "health_provider": false,
+    "country": "Australia"
+  },
+  "builder_email": "you@example.com",
+  "data_start_date": "2026-07-06",
+  "big_move_threshold": 0.2,
+  "summary": {
+    "time": "08:00",
+    "channels": "email",
+    "top3": [
+      "covers",
+      "sales",
+      "spend per cover"
+    ],
+    "targets": "no-show rate under 5%, spend per cover $65 or more",
+    "levers": [
+      "Meta ad budget and which posts get boosted",
+      "the weekly specials and live music nights",
+      "reminder texts and deposits for large bookings",
+      "rostering on quiet and busy nights",
+      "walk-in seating on the terrace"
+    ],
+    "quirks": [
+      "Bookings and covers come from the booking system's daily export, so the newest day can arrive late.",
+      "Sales come from the POS, ex GST, and include walk-ins.",
+      "Meta leads are Meta's own count and are not bookings."
+    ]
+  },
+  "viewers": [
+    {
+      "who": "Owner",
+      "pages": "All pages"
+    },
+    {
+      "who": "Venue manager",
+      "pages": "All pages"
+    }
+  ],
+  "sources": [
+    "meta_ads",
+    "xero",
+    "ga4"
+  ],
+  "custom_sources": {
+    "raw_bookings": [
+      "date",
+      "bookings",
+      "covers",
+      "no_shows",
+      "cancelled",
+      "synced_at"
+    ],
+    "raw_pos": [
+      "date",
+      "sales_ex_gst",
+      "transactions",
+      "synced_at"
+    ]
+  },
+  "metrics": [
+    {
+      "metric": "bookings",
+      "label": "Bookings",
+      "type": "count",
+      "format": "number",
+      "good_when": "up",
+      "daily": [
+        [
+          "raw_bookings",
+          "bookings"
+        ]
+      ],
+      "source": "Booking system export",
+      "definition": "Table bookings for that day (by dining date), excluding cancelled."
+    },
+    {
+      "metric": "covers",
+      "label": "Covers",
+      "type": "count",
+      "format": "number",
+      "good_when": "up",
+      "daily": [
+        [
+          "raw_bookings",
+          "covers"
+        ]
+      ],
+      "source": "Booking system export",
+      "definition": "Guests seated from bookings that day."
+    },
+    {
+      "metric": "no_shows",
+      "label": "No-shows",
+      "type": "count",
+      "format": "number",
+      "good_when": "down",
+      "daily": [
+        [
+          "raw_bookings",
+          "no_shows"
+        ]
+      ],
+      "source": "Booking system export",
+      "show": false,
+      "definition": "Bookings for that day marked no-show."
+    },
+    {
+      "metric": "no_show_rate",
+      "label": "No-show rate",
+      "type": "ratio",
+      "format": "percent",
+      "good_when": "down",
+      "num": "no_shows",
+      "den": "bookings",
+      "source": "Sheet formula",
+      "target": 0.05,
+      "definition": "No-shows divided by bookings, from the totals for the period."
+    },
+    {
+      "metric": "covers_per_booking",
+      "label": "Covers per booking",
+      "type": "ratio",
+      "format": "number",
+      "good_when": "up",
+      "num": "covers",
+      "den": "bookings",
+      "source": "Sheet formula",
+      "definition": "Covers divided by bookings."
+    },
+    {
+      "metric": "sales",
+      "label": "Sales (POS)",
+      "type": "count",
+      "format": "money",
+      "good_when": "up",
+      "daily": [
+        [
+          "raw_pos",
+          "sales_ex_gst"
+        ]
+      ],
+      "source": "POS",
+      "definition": "POS sales that trading day, ex GST, including walk-ins."
+    },
+    {
+      "metric": "spend_per_cover",
+      "label": "Spend per cover",
+      "type": "ratio",
+      "format": "money",
+      "good_when": "up",
+      "num": "sales",
+      "den": "covers",
+      "source": "Sheet formula",
+      "target": 65,
+      "definition": "POS sales divided by covers from bookings (blended: walk-in sales are included)."
+    },
+    {
+      "metric": "ad_spend",
+      "label": "Meta ad spend",
+      "type": "count",
+      "format": "money",
+      "good_when": "down",
+      "daily": [
+        [
+          "raw_meta_ads",
+          "spend"
+        ]
+      ],
+      "source": "Meta",
+      "definition": "Meta spend that day as Meta reports it, ex GST."
+    },
+    {
+      "metric": "web_sessions",
+      "label": "Website visits",
+      "type": "count",
+      "format": "number",
+      "good_when": "up",
+      "daily": [
+        [
+          "raw_ga4",
+          "sessions"
+        ]
+      ],
+      "source": "GA4",
+      "definition": "GA4 sessions on the website that day."
+    },
+    {
+      "metric": "cash_received",
+      "label": "Cash received (Xero)",
+      "type": "count",
+      "format": "money",
+      "good_when": "up",
+      "daily": [
+        [
+          "raw_xero",
+          "cash_received"
+        ]
+      ],
+      "source": "Xero",
+      "definition": "Payments received on sales invoices that day (functions and events), inc GST."
+    }
+  ],
+  "demo": {
+    "_note": "Sample-data sizes for Reporting -> Load demo data: [weekday base, spread, weekend base].",
+    "raw_bookings.bookings": [
+      38,
+      8,
+      62
+    ],
+    "raw_bookings.covers": [
+      105,
+      20,
+      175
+    ],
+    "raw_bookings.no_shows": [
+      2,
+      2,
+      3
+    ],
+    "raw_bookings.cancelled": [
+      2,
+      2,
+      4
+    ],
+    "raw_pos.sales_ex_gst": [
+      6800,
+      1400,
+      11500
+    ],
+    "raw_pos.transactions": [
+      120,
+      25,
+      190
+    ]
+  }
+}

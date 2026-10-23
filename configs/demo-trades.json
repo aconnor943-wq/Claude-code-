@@ -1,0 +1,70 @@
+{
+  "slug": "demo-trades",
+  "_note": "Demo trades client with made-up details. Quote visits are booked on a GHL calendar; won jobs are GHL opportunities.",
+  "business": {
+    "name": "Northside Electrical",
+    "niche": "residential and commercial electrician",
+    "location": "Brisbane northside QLD",
+    "sites_staff": "8 electricians, 2 office staff",
+    "owner_name": "Jordan Lee",
+    "owner_email": "owner@example.com",
+    "owner_mobile": "+61 400 000 000",
+    "timezone": "Australia/Brisbane",
+    "currency": "AUD",
+    "google_account": "reporting@example.com",
+    "health_provider": false,
+    "country": "Australia"
+  },
+  "builder_email": "you@example.com",
+  "data_start_date": "2026-07-06",
+  "big_move_threshold": 0.25,
+  "summary": {
+    "time": "06:30",
+    "channels": "email and SMS",
+    "top3": ["quote visits booked", "jobs won", "cost per job won"],
+    "targets": "quote booking rate 50% or better, cost per lead under $60",
+    "levers": [
+      "Google Ads budget and which services are advertised",
+      "how fast the office calls back new enquiries",
+      "follow-up on quotes not yet accepted",
+      "which suburbs and job types the ads target"
+    ],
+    "quirks": [
+      "Cost per job won is blended across all jobs, including referrals.",
+      "Won value is the quoted price when the job is accepted, not the final invoice."
+    ]
+  },
+  "viewers": [{ "who": "Owner", "pages": "All pages" }, { "who": "Office manager", "pages": "All pages" }],
+  "sources": ["ghl", "google_ads", "xero"],
+  "custom_sources": {},
+  "ghl": {
+    "location_id": "[GHL LOCATION ID]",
+    "booking_calendars": ["Quote visit"],
+    "sales_pipeline": "Jobs",
+    "exclude_tags": ["staff", "spam", "supplier"],
+    "source_map": { "google": ["google ads", "adwords", "src-google"], "meta": ["facebook", "instagram", "src-meta"] },
+    "status_values": { "showed": "showed", "no_show": "noshow", "cancelled": "cancelled", "invalid": "invalid" }
+  },
+  "metrics": [
+    { "metric": "leads", "label": "New enquiries", "type": "count", "format": "number", "good_when": "up",
+      "daily": [["raw_ghl", "leads"]], "source": "GHL", "definition": "New contacts created that day, not tagged staff, spam or supplier." },
+    { "metric": "leads_paid", "label": "Enquiries from Google Ads", "type": "count", "format": "number", "good_when": "up",
+      "daily": [["raw_ghl", "leads_google"]], "source": "GHL", "show": false, "definition": "New enquiries whose source maps to Google Ads." },
+    { "metric": "quotes_booked", "label": "Quote visits booked", "type": "count", "format": "number", "good_when": "up",
+      "daily": [["raw_ghl", "booked"]], "source": "GHL calendars", "definition": "Quote visits created that day on the Quote visit calendar." },
+    { "metric": "quote_rate", "label": "Quote booking rate", "type": "ratio", "format": "percent", "good_when": "up",
+      "num": "quotes_booked", "den": "leads", "source": "Sheet formula", "target": 0.5, "definition": "Quote visits booked divided by new enquiries." },
+    { "metric": "jobs_won", "label": "Jobs won", "type": "count", "format": "number", "good_when": "up",
+      "daily": [["raw_ghl", "won"]], "source": "GHL", "definition": "Jobs pipeline opportunities marked Won that day." },
+    { "metric": "won_value", "label": "Value of jobs won", "type": "count", "format": "money", "good_when": "up",
+      "daily": [["raw_ghl", "won_value"]], "source": "GHL", "definition": "Total quoted value of jobs marked Won that day." },
+    { "metric": "ad_spend", "label": "Google Ads spend", "type": "count", "format": "money", "good_when": "down",
+      "daily": [["raw_google_ads", "spend"]], "source": "Google Ads", "definition": "Google Ads spend that day, ex GST." },
+    { "metric": "cpl", "label": "Cost per lead", "type": "ratio", "format": "money", "good_when": "down",
+      "num": "ad_spend", "den": "leads_paid", "source": "Sheet formula", "target": 60, "definition": "Google Ads spend divided by enquiries from Google Ads." },
+    { "metric": "cost_per_job", "label": "Cost per job won (blended)", "type": "ratio", "format": "money", "good_when": "down",
+      "num": "ad_spend", "den": "jobs_won", "source": "Sheet formula", "definition": "Google Ads spend divided by all jobs won." },
+    { "metric": "revenue_invoiced", "label": "Revenue invoiced", "type": "count", "format": "money", "good_when": "up",
+      "daily": [["raw_xero", "revenue_invoiced"]], "source": "Xero", "definition": "Sales invoices dated that day, ex GST, excluding draft and voided." }
+  ]
+}

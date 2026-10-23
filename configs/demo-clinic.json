@@ -1,0 +1,99 @@
+{
+  "slug": "demo-clinic",
+  "_note": "Demo client with made-up details. Copy this file for each new business and change every value.",
+  "business": {
+    "name": "Harbourside Physio",
+    "niche": "multi-practitioner physio and Pilates clinic",
+    "location": "Southport, Gold Coast QLD",
+    "sites_staff": "1 site, 6 practitioners, 2 front desk",
+    "owner_name": "Sam Taylor",
+    "owner_email": "owner@example.com",
+    "owner_mobile": "+61 400 000 000",
+    "timezone": "Australia/Brisbane",
+    "currency": "AUD",
+    "google_account": "reporting@example.com",
+    "health_provider": true,
+    "country": "Australia"
+  },
+  "builder_email": "you@example.com",
+  "data_start_date": "2026-07-06",
+  "big_move_threshold": 0.2,
+  "summary": {
+    "time": "07:00",
+    "channels": "email and SMS",
+    "top3": ["new patient bookings", "cost per booking", "show rate"],
+    "targets": "booking rate 40% or better, show rate 90% or better, cost per lead under $40",
+    "levers": [
+      "Google and Meta ad budgets and which campaigns run",
+      "how fast front desk replies to new enquiries",
+      "reminder texts the day before appointments",
+      "practitioner rostering and which hours are open for new patients",
+      "follow-up calls for people who enquired but didn't book"
+    ],
+    "quirks": [
+      "Cost per booking is blended: it divides all ad spend by all bookings, including bookings that didn't come from ads.",
+      "Platform conversions are Google's and Meta's own counts, for reference only. Leads come from the CRM.",
+      "Xero payments can lag 1-2 days behind the invoice."
+    ]
+  },
+  "viewers": [
+    { "who": "Owner", "pages": "All pages" },
+    { "who": "Practice manager", "pages": "All pages" },
+    { "who": "Front desk lead", "pages": "Sales only (separate report)" }
+  ],
+  "sources": ["ghl", "google_ads", "meta_ads", "xero", "ga4"],
+  "custom_sources": {},
+  "ghl": {
+    "location_id": "[GHL LOCATION ID]",
+    "booking_calendars": ["New patient assessment", "Pilates intro class"],
+    "sales_pipeline": "New patients",
+    "exclude_tags": ["staff", "spam", "team-internal", "existing-client"],
+    "source_map": {
+      "google": ["google ads", "adwords", "src-google"],
+      "meta": ["facebook", "instagram", "meta", "src-meta"]
+    },
+    "status_values": { "showed": "showed", "no_show": "noshow", "cancelled": "cancelled", "invalid": "invalid" }
+  },
+  "meta": { "lead_action_type": "lead" },
+  "metrics": [
+    { "metric": "leads", "label": "New enquiries", "type": "count", "format": "number", "good_when": "up",
+      "daily": [["raw_ghl", "leads"]], "source": "GHL",
+      "definition": "New contacts created that day (Brisbane time), not tagged staff, spam, team-internal or existing-client." },
+    { "metric": "leads_paid", "label": "Enquiries from ads", "type": "count", "format": "number", "good_when": "up",
+      "daily": [["raw_ghl", "leads_paid"]], "source": "GHL", "show": false,
+      "definition": "New enquiries whose source or tags map to Google Ads or Meta." },
+    { "metric": "booked", "label": "Bookings made", "type": "count", "format": "number", "good_when": "up",
+      "daily": [["raw_ghl", "booked"]], "source": "GHL calendars",
+      "definition": "Appointments created that day on the New patient assessment and Pilates intro class calendars, any status except invalid." },
+    { "metric": "appts_due", "label": "Appointments due", "type": "count", "format": "number", "good_when": "up",
+      "daily": [["raw_ghl", "appts_due"]], "source": "GHL calendars", "show": false,
+      "definition": "Appointments scheduled for that day on those calendars, not cancelled." },
+    { "metric": "showed", "label": "Showed up", "type": "count", "format": "number", "good_when": "up",
+      "daily": [["raw_ghl", "showed"]], "source": "GHL calendars",
+      "definition": "Appointments scheduled for that day with status showed." },
+    { "metric": "booking_rate", "label": "Booking rate", "type": "ratio", "format": "percent", "good_when": "up",
+      "num": "booked", "den": "leads", "source": "Sheet formula", "target": 0.4,
+      "definition": "Bookings made divided by new enquiries, from the totals for the period." },
+    { "metric": "show_rate", "label": "Show rate", "type": "ratio", "format": "percent", "good_when": "up",
+      "num": "showed", "den": "appts_due", "source": "Sheet formula", "target": 0.9,
+      "definition": "Showed up divided by appointments due, from the totals for the period." },
+    { "metric": "ad_spend", "label": "Ad spend", "type": "count", "format": "money", "good_when": "down",
+      "daily": [["raw_google_ads", "spend"], ["raw_meta_ads", "spend"]], "source": "Ad platforms",
+      "definition": "Google Ads plus Meta spend that day as the platforms report it, ex GST, in AUD." },
+    { "metric": "cpl", "label": "Cost per lead", "type": "ratio", "format": "money", "good_when": "down",
+      "num": "ad_spend", "den": "leads_paid", "source": "Sheet formula", "target": 40,
+      "definition": "Ad spend divided by enquiries from ads." },
+    { "metric": "cost_per_booking", "label": "Cost per booking (blended)", "type": "ratio", "format": "money", "good_when": "down",
+      "num": "ad_spend", "den": "booked", "source": "Sheet formula",
+      "definition": "All ad spend divided by all bookings made, including bookings that didn't come from ads." },
+    { "metric": "won_value", "label": "Treatment plans won ($)", "type": "count", "format": "money", "good_when": "up",
+      "daily": [["raw_ghl", "won_value"]], "source": "GHL",
+      "definition": "Total value of New patients pipeline opportunities marked Won that day." },
+    { "metric": "revenue_invoiced", "label": "Revenue invoiced", "type": "count", "format": "money", "good_when": "up",
+      "daily": [["raw_xero", "revenue_invoiced"]], "source": "Xero",
+      "definition": "Sales invoices dated that day, ex GST, excluding draft and voided." },
+    { "metric": "cash_received", "label": "Cash received", "type": "count", "format": "money", "good_when": "up",
+      "daily": [["raw_xero", "cash_received"]], "source": "Xero",
+      "definition": "Payments received on sales invoices that day, inc GST." }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "ai-reporting-dashboard-template",
+  "private": true,
+  "type": "module",
+  "description": "Reusable AI reporting dashboard template: one config per business generates the sheet, n8n code, prompts and guides.",
+  "scripts": {
+    "new-client": "node scripts/new-client.mjs",
+    "test": "TZ=UTC node --test \"tests/*.test.mjs\""
+  },
+  "devDependencies": {
+    "hyperformula": "^3.0.0"
+  }
+}
