@@ -248,8 +248,11 @@ function loadDemoData() {
       if (values[tab]) rows[tab].push(values[tab]);
       else rows[tab].push([date].concat(CONFIG.raw_tabs[tab].slice(1).map(c => {
         if (c === 'synced_at') return stamp;
-        const hint = (CONFIG.demo || {})[tab + '.' + c];   // [weekday base, spread, weekend base] from the config
-        return hint ? noise(weekend && hint[2] != null ? hint[2] : hint[0], hint[1]) : noise(20, 10);
+        // [weekday base, spread, weekend base, multiplier for the last full week] from the config's "demo"
+        const hint = (CONFIG.demo || {})[tab + '.' + c];
+        if (!hint) return noise(20, 10);
+        const base = (weekend && hint[2] != null ? hint[2] : hint[0]) * (inReportWeek && hint[3] != null ? hint[3] : 1);
+        return noise(base, hint[1]);
       })));
     });
   });

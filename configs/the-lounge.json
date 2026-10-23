@@ -82,7 +82,7 @@
     ]
   },
   "demo": {
-    "_note": "Sample-data sizes for Reporting -> Load demo data: [weekday base, spread, weekend base]. Not real figures.",
+    "_note": "Sample-data sizes for Reporting -> Load demo data: [weekday base, spread, weekend base, last-full-week multiplier]. Not real figures. The multipliers give the demo a story: website bookings up after the new site, no-shows up.",
     "raw_opentable.bookings": [
       30,
       7,
@@ -101,7 +101,8 @@
     "raw_opentable.no_shows": [
       1,
       1,
-      3
+      3,
+      2.2
     ],
     "raw_opentable.cancelled": [
       2,
@@ -111,7 +112,8 @@
     "raw_opentable.website_bookings": [
       9,
       3,
-      16
+      16,
+      1.7
     ],
     "raw_lightspeed.sales_ex_gst": [
       6200,

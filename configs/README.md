@@ -26,7 +26,7 @@ One file per client: `configs/<slug>.json`. Copy the closest demo and change eve
 | `custom_sources` | Anything else (POS, booking or practice software, a manual tab): `{ "raw_pos": ["date", "sales_ex_gst", "synced_at"] }`. The tab name must start with `raw_`, `date` must be first |
 | `ghl` | Only if `sources` includes `ghl`: Location ID, the calendars that count as bookings, the sales pipeline, tags to exclude, how source and tags map to Google and Meta, and the appointment status words GHL returns |
 | `meta.lead_action_type` | Only for Meta: the `action_type` the client's lead forms report (check the raw output) |
-| `demo` | Optional, for demo data only: sizes for custom-source columns, `"raw_pos.sales_ex_gst": [weekday base, spread, weekend base]` |
+| `demo` | Optional, for demo data only: sizes for custom-source columns, `"raw_pos.sales_ex_gst": [weekday base, spread, weekend base, last-full-week multiplier]`. The multiplier (optional) makes the demo's last full week tell a story, e.g. `1.7` for a jump |
 | `metrics` | The agreed 8-12 numbers, below |
 
 ## Metrics

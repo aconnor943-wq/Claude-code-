@@ -39,7 +39,7 @@ const CONFIG = {
     ]
   },
   "demo": {
-    "_note": "Sample-data sizes for Reporting -> Load demo data: [weekday base, spread, weekend base]. Not real figures.",
+    "_note": "Sample-data sizes for Reporting -> Load demo data: [weekday base, spread, weekend base, last-full-week multiplier]. Not real figures. The multipliers give the demo a story: website bookings up after the new site, no-shows up.",
     "raw_opentable.bookings": [
       30,
       7,
@@ -58,7 +58,8 @@ const CONFIG = {
     "raw_opentable.no_shows": [
       1,
       1,
-      3
+      3,
+      2.2
     ],
     "raw_opentable.cancelled": [
       2,
@@ -68,7 +69,8 @@ const CONFIG = {
     "raw_opentable.website_bookings": [
       9,
       3,
-      16
+      16,
+      1.7
     ],
     "raw_lightspeed.sales_ex_gst": [
       6200,
@@ -530,8 +532,11 @@ function loadDemoData() {
       if (values[tab]) rows[tab].push(values[tab]);
       else rows[tab].push([date].concat(CONFIG.raw_tabs[tab].slice(1).map(c => {
         if (c === 'synced_at') return stamp;
-        const hint = (CONFIG.demo || {})[tab + '.' + c];   // [weekday base, spread, weekend base] from the config
-        return hint ? noise(weekend && hint[2] != null ? hint[2] : hint[0], hint[1]) : noise(20, 10);
+        // [weekday base, spread, weekend base, multiplier for the last full week] from the config's "demo"
+        const hint = (CONFIG.demo || {})[tab + '.' + c];
+        if (!hint) return noise(20, 10);
+        const base = (weekend && hint[2] != null ? hint[2] : hint[0]) * (inReportWeek && hint[3] != null ? hint[3] : 1);
+        return noise(base, hint[1]);
       })));
     });
   });
