@@ -101,8 +101,7 @@ ${rows.join('\n')}
 
 - Weeks run Monday to Sunday in ${cfg.business.timezone}.
 - A move of ${Math.round((cfg.big_move_threshold ?? 0.2) * 100)}% or more against the 4-week average is flagged as a big move.
-- Leads come from the CRM; spend comes from the ad platforms. The platforms' own conversion counts are shown for reference only.
-`;
+${cfg.sources.some((x) => ['google_ads', 'meta_ads'].includes(x)) ? "- Leads come from the CRM; spend comes from the ad platforms. The platforms' own conversion counts are shown for reference only.\n" : ''}`;
 }
 
 function clientReadme(cfg, files) {

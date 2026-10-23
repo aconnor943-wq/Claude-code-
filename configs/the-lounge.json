@@ -1,0 +1,309 @@
+{
+  "slug": "the-lounge",
+  "_note": "The Lounge, Paradise Point. Confirmed: name, address, time zone, OpenTable (restaurant ID 212261), Lightspeed POS, no ad spend, no Xero, the weekly nights. Anything in [BRACKETS] and everything under _open_questions is still to confirm with the owner.",
+  "_open_questions": [
+    "Owner's name, email and mobile, and the Google account that should own the sheet and report",
+    "Which Lightspeed product they're on (Restaurant K-Series or another) and who can grant API access. raw_lightspeed assumes daily sales ex GST and transaction count; check that the API or a scheduled export gives both per trading day",
+    "OpenTable reporting: confirm which daily report or export gives bookings, covers, no-shows, cancellations and bookings made through the website widget. OpenTable's API is for approved partners, so this is likely a scheduled report export (check what their plan offers)",
+    "Do they seat walk-ins through OpenTable (host stand / floor plan)? If not, drop walk_in_covers and use booked covers only",
+    "GA4: set up a GA4 property on the new website and give the reporting account Viewer access",
+    "Who should see the dashboard, and when the Monday summary should arrive",
+    "The three numbers the owner would check every morning, in their words (placeholders below)"
+  ],
+  "business": {
+    "name": "The Lounge",
+    "niche": "modern Australian restaurant and cocktail bar with a terrace",
+    "location": "44 The Esplanade, Paradise Point QLD 4216",
+    "sites_staff": "1 venue: dining room, bar and terrace [SEATS + STAFF]",
+    "owner_name": "[OWNER NAME]",
+    "owner_email": "[OWNER EMAIL]",
+    "owner_mobile": "[OWNER MOBILE]",
+    "timezone": "Australia/Brisbane",
+    "currency": "AUD",
+    "google_account": "[CLIENT GOOGLE ACCOUNT]",
+    "health_provider": false,
+    "country": "Australia"
+  },
+  "builder_email": "aconnor943@gmail.com",
+  "data_start_date": "2026-09-28",
+  "big_move_threshold": 0.2,
+  "summary": {
+    "time": "08:00",
+    "channels": "email",
+    "top3": [
+      "covers",
+      "sales",
+      "website bookings"
+    ],
+    "targets": "none agreed yet",
+    "levers": [
+      "the weekly nights: Sunday oyster special with live music, Monday steak special with live music, Tuesday seafood platter for one at $33",
+      "promoting the specials and live music on the website and social media",
+      "reminder texts for bookings and deposits for large groups",
+      "rostering on quiet and busy nights",
+      "terrace and walk-in seating",
+      "the booking widget and Book a table buttons on the website"
+    ],
+    "quirks": [
+      "Bookings, covers and no-shows come from OpenTable's daily export, so the newest day can arrive late.",
+      "Sales come from Lightspeed, ex GST, and include walk-ins and bar-only sales, so spend per cover is blended.",
+      "Website bookings are OpenTable bookings made through the widget on the venue's website."
+    ]
+  },
+  "viewers": [
+    {
+      "who": "Owner",
+      "pages": "All pages"
+    },
+    {
+      "who": "[VENUE MANAGER]",
+      "pages": "All pages"
+    }
+  ],
+  "sources": [
+    "ga4"
+  ],
+  "custom_sources": {
+    "raw_opentable": [
+      "date",
+      "bookings",
+      "covers",
+      "walk_in_covers",
+      "no_shows",
+      "cancelled",
+      "website_bookings",
+      "synced_at"
+    ],
+    "raw_lightspeed": [
+      "date",
+      "sales_ex_gst",
+      "transactions",
+      "synced_at"
+    ]
+  },
+  "demo": {
+    "_note": "Sample-data sizes for Reporting -> Load demo data: [weekday base, spread, weekend base]. Not real figures.",
+    "raw_opentable.bookings": [
+      30,
+      7,
+      55
+    ],
+    "raw_opentable.covers": [
+      82,
+      18,
+      150
+    ],
+    "raw_opentable.walk_in_covers": [
+      25,
+      8,
+      45
+    ],
+    "raw_opentable.no_shows": [
+      1,
+      1,
+      3
+    ],
+    "raw_opentable.cancelled": [
+      2,
+      2,
+      4
+    ],
+    "raw_opentable.website_bookings": [
+      9,
+      3,
+      16
+    ],
+    "raw_lightspeed.sales_ex_gst": [
+      6200,
+      1400,
+      11000
+    ],
+    "raw_lightspeed.transactions": [
+      110,
+      25,
+      180
+    ]
+  },
+  "metrics": [
+    {
+      "metric": "bookings",
+      "label": "Bookings",
+      "type": "count",
+      "format": "number",
+      "good_when": "up",
+      "daily": [
+        [
+          "raw_opentable",
+          "bookings"
+        ]
+      ],
+      "source": "OpenTable",
+      "definition": "OpenTable reservations for that dining date (Brisbane time), excluding cancelled."
+    },
+    {
+      "metric": "covers",
+      "label": "Booked covers",
+      "type": "count",
+      "format": "number",
+      "good_when": "up",
+      "daily": [
+        [
+          "raw_opentable",
+          "covers"
+        ]
+      ],
+      "source": "OpenTable",
+      "definition": "Guests seated from OpenTable bookings that day."
+    },
+    {
+      "metric": "walk_in_covers",
+      "label": "Walk-in covers",
+      "type": "count",
+      "format": "number",
+      "good_when": "up",
+      "daily": [
+        [
+          "raw_opentable",
+          "walk_in_covers"
+        ]
+      ],
+      "source": "OpenTable",
+      "definition": "Walk-in guests seated through OpenTable's host stand that day (only if the team records walk-ins there)."
+    },
+    {
+      "metric": "all_covers",
+      "label": "All covers",
+      "type": "count",
+      "format": "number",
+      "good_when": "up",
+      "daily": [
+        [
+          "raw_opentable",
+          "covers"
+        ],
+        [
+          "raw_opentable",
+          "walk_in_covers"
+        ]
+      ],
+      "source": "OpenTable",
+      "definition": "Booked covers plus walk-in covers."
+    },
+    {
+      "metric": "no_shows",
+      "label": "No-shows",
+      "type": "count",
+      "format": "number",
+      "good_when": "down",
+      "daily": [
+        [
+          "raw_opentable",
+          "no_shows"
+        ]
+      ],
+      "source": "OpenTable",
+      "show": false,
+      "definition": "Bookings for that day marked no-show in OpenTable."
+    },
+    {
+      "metric": "no_show_rate",
+      "label": "No-show rate",
+      "type": "ratio",
+      "format": "percent",
+      "good_when": "down",
+      "num": "no_shows",
+      "den": "bookings",
+      "source": "Sheet formula",
+      "definition": "No-shows divided by bookings, from the totals for the period."
+    },
+    {
+      "metric": "covers_per_booking",
+      "label": "Covers per booking",
+      "type": "ratio",
+      "format": "number",
+      "good_when": "up",
+      "num": "covers",
+      "den": "bookings",
+      "source": "Sheet formula",
+      "definition": "Booked covers divided by bookings."
+    },
+    {
+      "metric": "website_bookings",
+      "label": "Website bookings",
+      "type": "count",
+      "format": "number",
+      "good_when": "up",
+      "daily": [
+        [
+          "raw_opentable",
+          "website_bookings"
+        ]
+      ],
+      "source": "OpenTable",
+      "definition": "OpenTable bookings for that day made through the booking widget on the venue's website."
+    },
+    {
+      "metric": "website_share",
+      "label": "Share of bookings from the website",
+      "type": "ratio",
+      "format": "percent",
+      "good_when": "up",
+      "num": "website_bookings",
+      "den": "bookings",
+      "source": "Sheet formula",
+      "definition": "Website bookings divided by all bookings."
+    },
+    {
+      "metric": "sales",
+      "label": "Sales (Lightspeed)",
+      "type": "count",
+      "format": "money",
+      "good_when": "up",
+      "daily": [
+        [
+          "raw_lightspeed",
+          "sales_ex_gst"
+        ]
+      ],
+      "source": "Lightspeed",
+      "definition": "Lightspeed sales that trading day, ex GST, including walk-ins and bar-only sales."
+    },
+    {
+      "metric": "spend_per_cover",
+      "label": "Spend per cover (blended)",
+      "type": "ratio",
+      "format": "money",
+      "good_when": "up",
+      "num": "sales",
+      "den": "all_covers",
+      "source": "Sheet formula",
+      "definition": "Lightspeed sales divided by all covers. Blended: bar-only sales with no table are included."
+    },
+    {
+      "metric": "web_sessions",
+      "label": "Website visits",
+      "type": "count",
+      "format": "number",
+      "good_when": "up",
+      "daily": [
+        [
+          "raw_ga4",
+          "sessions"
+        ]
+      ],
+      "source": "GA4",
+      "definition": "GA4 sessions on the website that day."
+    },
+    {
+      "metric": "web_booking_rate",
+      "label": "Website visits that booked",
+      "type": "ratio",
+      "format": "percent",
+      "good_when": "up",
+      "num": "website_bookings",
+      "den": "web_sessions",
+      "source": "Sheet formula",
+      "definition": "Website bookings divided by website visits."
+    }
+  ]
+}

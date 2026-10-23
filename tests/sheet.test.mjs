@@ -44,9 +44,10 @@ for (const file of configs) {
   const weekTotal = (metric, monday) => { let s = 0; for (let i = 0; i < 7; i++) s += dailyValue(metric, addDays(monday, i)); return s; };
   const expected = (m, monday) => (m.type === 'ratio' ? weekTotal(m.num, monday) / weekTotal(m.den, monday) : weekTotal(m.metric, monday));
   const expectedAvg = (m) => {
-    const weeks = [1, 2, 3, 4].map((k) => addDays(reportWeek, -7 * k));
+    // the 4 weeks before the report week, or fewer for a client whose data started recently
+    const weeks = [1, 2, 3, 4].map((k) => addDays(reportWeek, -7 * k)).filter((w) => w >= cfg.data_start_date);
     if (m.type === 'ratio') return weeks.reduce((s, w) => s + weekTotal(m.num, w), 0) / weeks.reduce((s, w) => s + weekTotal(m.den, w), 0);
-    return weeks.reduce((s, w) => s + weekTotal(m.metric, w), 0) / 4;
+    return weeks.reduce((s, w) => s + weekTotal(m.metric, w), 0) / weeks.length;
   };
   const name = (t) => `${cfg.slug}: ${t}`;
 
