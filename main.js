@@ -61,20 +61,11 @@
     todayRow.querySelector('.nights__what').appendChild(tag);
   }
 
-  // ---------- plate tabs ----------
-  const tabs = [...document.querySelectorAll('[data-tab]')];
-  tabs.forEach((tab) => tab.addEventListener('click', () => {
-    const id = tab.dataset.tab;
-    tabs.forEach((t) => t.setAttribute('aria-selected', String(t === tab)));
-    document.querySelectorAll('[data-plate]').forEach((img) => img.classList.toggle('is-shown', img.dataset.plate === id));
-    document.querySelectorAll('[data-copy]').forEach((c) => { c.hidden = c.dataset.copy !== id; });
-  }));
-
   // ---------- entrances: heading, then text, then picture, staggered ----------
   const groups = [
     ['.intro', ['.intro__statement', '.intro__note']],
-    ['.plate', ['.plate__img', '.plate__tabs', '.plate__copy', '.plate__actions']],
-    ['.menu', ['.menu__title', '.menu__rows li', '.menu__foot']],
+    ['.plate', ['.plate__img', '.plate__copy', '.plate__actions']],
+    ['.menu', ['.menu__title', '.menu__photo img', '.menu__rows li', '.menu__foot']],
     ['.nights', ['.nights__title', '.nights__rows li']],
     ['.bar', ['.bar__title']],
     ['.book', ['.book__title', '.book__text p', '.book__widget']],

@@ -166,13 +166,16 @@ html { scrollbar-color: var(--lamp-muted) var(--black); }
 .menu__title { font: 300 var(--step-head)/.98 var(--font); letter-spacing: -.03em; }
 .menu__title span:first-child { display: block; }
 .menu__body { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: clamp(1rem, 2vw, 2rem); margin-top: 96px; align-items: end; }
-.menu__rows { grid-column: 5 / 13; grid-row: 1; list-style: none; margin: 0; padding: 0; }
+.menu__photo { grid-column: 1 / 5; grid-row: 1 / 3; align-self: start; }
+.menu__photo img { width: 100%; }
+.menu__photo figcaption { margin-top: 10px; font-size: var(--step-small); color: var(--ground-muted); }
+.menu__rows { grid-column: 6 / 13; grid-row: 1; list-style: none; margin: 0; padding: 0; }
 .menu__rows li { display: grid; grid-template-columns: 24% 1fr auto; gap: 1rem; align-items: baseline; padding-bottom: 26px; }
 .menu__rows li.gap { padding-top: 44px; }
 .menu__rows .k { color: var(--ground-muted); }
 .menu__rows .d { font: 400 var(--step-lead)/1.2 var(--font); letter-spacing: -.01em; }
 .menu__rows .n { color: var(--ground-muted); text-align: right; }
-.menu__foot { grid-column: 5 / 13; grid-row: 2; margin-top: 2rem; font-size: var(--step-small); color: var(--ground-muted); max-width: 44ch; }
+.menu__foot { grid-column: 6 / 13; grid-row: 2; margin-top: 2rem; font-size: var(--step-small); color: var(--ground-muted); max-width: 44ch; }
 
 /* ---------- nights: the week at dusk ---------- */
 .nights { background: var(--sea); color: var(--sea-ink); padding: var(--gap) 0 0; transition: background-color var(--light) var(--ease); }
@@ -261,6 +264,7 @@ html { scrollbar-color: var(--lamp-muted) var(--black); }
   .links { display: none; }
   .hero__side { width: min(32ch, 46vw); }
   .menu__word { display: none; }
+  .menu__photo { grid-column: 1 / 8; grid-row: 1; margin-bottom: 56px; }
   .menu__rows, .menu__foot { grid-column: 1 / -1; grid-row: auto; }
   .book__text { grid-column: 1 / -1; margin-bottom: 2.5rem; }
   .book__widget { grid-column: 1 / -1; }
@@ -285,6 +289,7 @@ html { scrollbar-color: var(--lamp-muted) var(--black); }
 
   .menu__title span:first-child { padding-left: 0; }
   .menu__body { display: block; margin-top: 48px; }
+  .menu__photo { width: 72%; margin: 0 0 48px; }
   .menu__rows li { grid-template-columns: 1fr auto; row-gap: .1rem; }
   .menu__rows .k { grid-column: 1; grid-row: 1; }
   .menu__rows .d { grid-column: 1; grid-row: 2; }
