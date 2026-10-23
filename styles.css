@@ -28,7 +28,7 @@
   --step-body: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
   --step-lead: clamp(1.25rem, 1.05rem + 0.8vw, 1.75rem);
   --step-head: clamp(2.25rem, 1.3rem + 3.6vw, 4rem);
-  --step-name: clamp(4.5rem, 16vw, 16rem);
+  --step-name: clamp(4rem, 9.5vw, 10rem);
 
   --m: clamp(16px, 2.2vw, 32px);
   --gap: clamp(120px, 14vw, 200px);
@@ -117,22 +117,27 @@ html { scrollbar-color: var(--lamp-muted) var(--black); }
 .light-switch button[aria-pressed="true"] { font-weight: 500; text-decoration: underline; text-underline-offset: .35em; }
 
 /* ---------- hero ---------- */
-.hero { position: relative; height: 100svh; min-height: 560px; overflow: hidden; background: var(--black); color: #fff; }
-.hero__media, .hero__video { position: absolute; inset: 0; width: 100%; height: 100%; }
-.hero__video { object-fit: cover; opacity: 0; transition: opacity var(--light) var(--ease); }
-[data-light="day"] .hero__video--day, [data-light="night"] .hero__video--night { opacity: 1; }
-.hero__scrim { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(10,9,8,.66) 0%, rgba(10,9,8,.42) 45%, rgba(10,9,8,0) 72%), linear-gradient(180deg, rgba(10,9,8,.35) 0%, rgba(10,9,8,0) 16%); transition: opacity var(--light) var(--ease); } /* taste-skill-ignore: neutral scrim under type on the photograph */
-[data-light="night"] .hero__scrim { background: linear-gradient(0deg, rgba(10,9,8,.74) 0%, rgba(10,9,8,.52) 50%, rgba(10,9,8,.1) 78%), linear-gradient(180deg, rgba(10,9,8,.4) 0%, rgba(10,9,8,0) 16%); } /* taste-skill-ignore: neutral scrim under type on the photograph */
-.hero__name {
-  position: absolute; left: var(--m); bottom: clamp(20px, 4vh, 48px);
-  display: flex; flex-direction: column;
-  font: 300 var(--step-name)/.9 var(--font); letter-spacing: -.035em;
+.hero {
+  position: relative; height: 100svh; min-height: 560px; overflow: hidden;
+  display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr auto;
+  background: var(--black); color: var(--lamp);
 }
-.hero__name span:last-child { padding-left: 1.05em; }
+.hero__media { position: relative; grid-column: 2; grid-row: 1 / 3; overflow: hidden; }
+.hero__video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity var(--light) var(--ease); }
+[data-light="day"] .hero__video--day, [data-light="night"] .hero__video--night { opacity: 1; }
+.hero__scrim { position: absolute; top: 0; right: 0; width: 50%; height: 150px; background: linear-gradient(180deg, rgba(10,9,8,.62) 0%, rgba(10,9,8,.3) 55%, rgba(10,9,8,0) 100%); pointer-events: none; } /* taste-skill-ignore: neutral scrim under the nav links on the video */
+.hero__name {
+  grid-column: 1; grid-row: 1; align-self: end;
+  display: flex; flex-direction: column;
+  padding: 0 var(--m) clamp(28px, 4vh, 48px);
+  font: 300 var(--step-name)/.9 var(--font); letter-spacing: -.035em; color: #fff;
+}
+.hero__name span:last-child { padding-left: .55em; }
 .hero__side {
-  position: absolute; right: var(--m); bottom: clamp(28px, 5vh, 60px);
-  width: min(40ch, 36vw); text-align: right; text-wrap: balance;
-  display: flex; flex-direction: column; align-items: flex-end; gap: .9rem;
+  grid-column: 1; grid-row: 2;
+  padding: 0 var(--m) clamp(32px, 6vh, 64px);
+  max-width: 40ch;
+  display: flex; flex-direction: column; align-items: flex-start; gap: .9rem;
 }
 .hero__line { font-size: var(--step-lead); line-height: 1.3; }
 .hero__status { font-size: var(--step-small); display: flex; align-items: center; gap: .55rem; }
@@ -267,7 +272,6 @@ html { scrollbar-color: var(--lamp-muted) var(--black); }
 /* ---------- tablet ---------- */
 @media (max-width: 1000px) {
   .links { display: none; }
-  .hero__side { width: min(32ch, 46vw); }
   .menu__photo { grid-column: 1 / 8; grid-row: 1; margin-bottom: 56px; }
   .menu__rows, .menu__foot { grid-column: 1 / -1; grid-row: auto; }
   .book__text { grid-column: 1 / -1; margin-bottom: 2.5rem; }
@@ -279,9 +283,11 @@ html { scrollbar-color: var(--lamp-muted) var(--black); }
   .bar-top { gap: .6rem; padding-block: 10px; }
   .brand span { display: none; }
   .light-switch button { padding: 0 .4rem; }
-  .hero__name { font-size: 20vw; bottom: auto; top: 26svh; }
-  .hero__name span:last-child { padding-left: .5em; }
-  .hero__side { left: var(--m); right: var(--m); width: auto; text-align: left; align-items: flex-start; bottom: 32px; }
+  .hero { height: auto; min-height: 100svh; grid-template-columns: 1fr; grid-template-rows: 54svh auto auto; }
+  .hero__media { grid-column: 1; grid-row: 1; }
+  .hero__scrim { width: 100%; }
+  .hero__name { grid-row: 2; font-size: 17vw; padding-top: 28px; padding-bottom: 20px; }
+  .hero__side { grid-row: 3; }
 
   .intro__statement { margin-left: var(--m); }
   .intro__pair { display: block; }
