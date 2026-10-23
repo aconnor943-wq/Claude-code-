@@ -8,5 +8,5 @@ Static website for The Lounge, Paradise Point (Gold Coast). No build step: open 
 
 ## Still to confirm
 - Phone number (`index.html`, Visit section — marked `TODO`)
-- Bookings use the OpenTable widget for restaurant ID 212261 (`index.html`, Book section); confirm this is the venue's live OpenTable account
+- Bookings use the OpenTable widget for restaurant ID 212261 (`index.html`, Book section), confirmed from the venue's OpenTable admin
 - Opening hours and weekly specials are taken from the OpenTable listing; hours also live in `main.js` (`HOURS`) for the "open now" indicator

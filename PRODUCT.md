@@ -16,7 +16,7 @@ The website for The Lounge, Paradise Point: a modern Australian restaurant and c
 A neighbourhood venue on the Broadwater with a lit, arched back bar, a fern-hung street terrace and a weekly rhythm of specials with live music. Brand mark is the gold neon TL monogram on a black oval sign reading "THE LOUNGE / PARADISE POINT".
 
 ## Operating Context
-- Bookings run through OpenTable (restaurant ID 212261, to be confirmed by the venue). The site embeds OpenTable's reservation widget and links to the OpenTable listing as a fallback.
+- Bookings run through OpenTable (restaurant ID 212261, confirmed from the venue's OpenTable admin). The site embeds OpenTable's reservation widget and links to the OpenTable listing as a fallback.
 - Hours (from the OpenTable listing, to be confirmed): Mon–Thu 12pm–9pm, Fri 12pm–11pm, Sat 11:30am–11pm, Sun 11:30am–8pm. Queensland time, no daylight saving.
 - Weekly nights (from the listing): Sunday oyster special with live music; Monday steak special with live music; Tuesday seafood platter for one, $33.
 - Menu items named in the OpenTable listing (to be confirmed by the owner): oysters, scallops, Moreton Bay bugs, steaks including a 1kg T-bone, whole roasted chickens, fresh seafood. Scallops and salt and pepper calamari are confirmed by the owner's own photos.
