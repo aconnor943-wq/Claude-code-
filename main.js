@@ -74,12 +74,12 @@
   const groups = [
     ['.intro', ['.intro__statement', '.intro__note']],
     ['.plate', ['.plate__img', '.plate__tabs', '.plate__copy', '.plate__actions']],
-    ['.menu', ['.menu__title', '.menu__rows li', '.menu__foot', '.menu__photo img']],
+    ['.menu', ['.menu__title', '.menu__rows li', '.menu__foot']],
     ['.nights', ['.nights__title', '.nights__rows li']],
     ['.bar', ['.bar__title']],
     ['.book', ['.book__title', '.book__text p', '.book__widget']],
     ['.visit', ['.visit__row']],
-    ['.foot', ['.foot__top', '.foot__name']],
+    ['.foot', ['.foot__top', '.foot__mono', '.foot__name']],
   ];
   // pictures animate with a clip-path wipe; Chromium reports a fully clipped element as not intersecting,
   // so each one is observed through its unclipped parent
@@ -109,6 +109,15 @@
     byWatched.forEach((_, w) => io.observe(w));
   } else {
     reveals.forEach(([, el]) => el.classList.add('is-in'));
+  }
+
+  // ---------- the bar's evening loop plays only while it is on screen ----------
+  const barVideo = document.querySelector('[data-bar-video]');
+  if (barVideo && !reduceMotion && 'IntersectionObserver' in window) {
+    new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) { barVideo.preload = 'auto'; barVideo.play().catch(() => {}); }
+      else barVideo.pause();
+    }, { threshold: 0.2 }).observe(barVideo);
   }
 
   // ---------- booking: hide the fallback once OpenTable's iframe arrives ----------

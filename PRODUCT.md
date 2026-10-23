@@ -19,6 +19,7 @@ A neighbourhood venue on the Broadwater with a lit, arched back bar, a fern-hung
 - Bookings run through OpenTable (restaurant ID 212261, to be confirmed by the venue). The site embeds OpenTable's reservation widget and links to the OpenTable listing as a fallback.
 - Hours (from the OpenTable listing, to be confirmed): Mon–Thu 12pm–9pm, Fri 12pm–11pm, Sat 11:30am–11pm, Sun 11:30am–8pm. Queensland time, no daylight saving.
 - Weekly nights (from the listing): Sunday oyster special with live music; Monday steak special with live music; Tuesday seafood platter for one, $33.
+- Menu items named in the OpenTable listing (to be confirmed by the owner): oysters, scallops, Moreton Bay bugs, steaks including a 1kg T-bone, whole roasted chickens, fresh seafood. Scallops and salt and pepper calamari are confirmed by the owner's own photos.
 
 ## Capabilities and Constraints
 - Static HTML/CSS/JS, no build step; deployable to any static host.
