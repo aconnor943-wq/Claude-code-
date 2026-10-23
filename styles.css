@@ -145,7 +145,6 @@ html { scrollbar-color: var(--lamp-muted) var(--black); }
 .intro__photo img { width: 100%; }
 .intro__photo figcaption { margin-top: 10px; font-size: var(--step-small); color: var(--ground-muted); }
 .intro__note { grid-column: 2 / 5; grid-row: 1; align-self: start; max-width: 30ch; }
-.intro__photo--a { grid-column: 6 / 13; }
 
 /* ---------- plate: the dish, spare text ---------- */
 .plate { display: grid; grid-template-columns: 1fr 1fr; min-height: 88svh; }
@@ -263,7 +262,6 @@ html { scrollbar-color: var(--lamp-muted) var(--black); }
 @media (max-width: 1000px) {
   .links { display: none; }
   .hero__side { width: min(32ch, 46vw); }
-  .menu__word { display: none; }
   .menu__photo { grid-column: 1 / 8; grid-row: 1; margin-bottom: 56px; }
   .menu__rows, .menu__foot { grid-column: 1 / -1; grid-row: auto; }
   .book__text { grid-column: 1 / -1; margin-bottom: 2.5rem; }

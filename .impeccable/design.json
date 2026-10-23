@@ -1,0 +1,547 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-23T05:05:09+00:00",
+  "title": "Design System: The Lounge, Paradise Point",
+  "extensions": {
+    "colorMeta": {
+      "gold": {
+        "role": "primary",
+        "displayName": "Neon Sign Gold",
+        "canonical": "#e2b866",
+        "tonalRamp": [
+          "#200000",
+          "#3e1b00",
+          "#5e3900",
+          "#805a00",
+          "#a37b24",
+          "#c79e4c",
+          "#edc270",
+          "#ffe895"
+        ]
+      },
+      "gold-lift": {
+        "role": "primary",
+        "displayName": "Gold Lift",
+        "canonical": "#ecc77e",
+        "tonalRamp": [
+          "#1e0200",
+          "#3b1d00",
+          "#5b3b00",
+          "#7c5b02",
+          "#9f7d33",
+          "#c39f57",
+          "#e9c47b",
+          "#ffe99f"
+        ]
+      },
+      "gold-ink": {
+        "role": "primary",
+        "displayName": "Gold Ink",
+        "canonical": "#15120c",
+        "tonalRamp": [
+          "#0e0b06",
+          "#28251e",
+          "#45423b",
+          "#656159",
+          "#86827a",
+          "#a9a59c",
+          "#cdc9c0",
+          "#f2eee5"
+        ]
+      },
+      "sea": {
+        "role": "secondary",
+        "displayName": "Broadwater Teal",
+        "canonical": "#1d4a4f",
+        "tonalRamp": [
+          "#001015",
+          "#002c30",
+          "#1d4a4f",
+          "#3d6a6f",
+          "#5e8b91",
+          "#81aeb4",
+          "#a4d3d9",
+          "#c9f9fe"
+        ]
+      },
+      "sea-2": {
+        "role": "secondary",
+        "displayName": "Shallow Teal",
+        "canonical": "#245a60",
+        "tonalRamp": [
+          "#001116",
+          "#002c32",
+          "#124b51",
+          "#366b71",
+          "#578d93",
+          "#7ab0b6",
+          "#9dd4db",
+          "#c2faff"
+        ]
+      },
+      "sea-today": {
+        "role": "secondary",
+        "displayName": "Today Teal",
+        "canonical": "#2f6d73",
+        "tonalRamp": [
+          "#001117",
+          "#002d33",
+          "#024c51",
+          "#2e6c72",
+          "#518e94",
+          "#74b1b7",
+          "#97d6dc",
+          "#bcfcff"
+        ]
+      },
+      "sea-night": {
+        "role": "secondary",
+        "displayName": "Dusk Teal",
+        "canonical": "#10292c",
+        "tonalRamp": [
+          "#000f12",
+          "#10292c",
+          "#2e474a",
+          "#4c676a",
+          "#6d888b",
+          "#8fabaf",
+          "#b3cfd3",
+          "#d7f5f9"
+        ]
+      },
+      "sea-2-night": {
+        "role": "secondary",
+        "displayName": "Dusk Band",
+        "canonical": "#153236",
+        "tonalRamp": [
+          "#000f13",
+          "#0c2a2e",
+          "#2a474c",
+          "#49676c",
+          "#6a898d",
+          "#8cacb0",
+          "#afd0d5",
+          "#d4f6fb"
+        ]
+      },
+      "sea-today-night": {
+        "role": "secondary",
+        "displayName": "Dusk Today",
+        "canonical": "#1f4549",
+        "tonalRamp": [
+          "#001014",
+          "#022b2f",
+          "#23494d",
+          "#43696d",
+          "#638a8f",
+          "#85adb2",
+          "#a9d2d6",
+          "#cef8fc"
+        ]
+      },
+      "sea-ink": {
+        "role": "secondary",
+        "displayName": "Foam",
+        "canonical": "#eef1ee",
+        "tonalRamp": [
+          "#0a0c0a",
+          "#242624",
+          "#404340",
+          "#5f625f",
+          "#808380",
+          "#a3a6a3",
+          "#c7cac7",
+          "#ecefec"
+        ]
+      },
+      "sea-muted": {
+        "role": "secondary",
+        "displayName": "Salt Haze",
+        "canonical": "#c3d3d1",
+        "tonalRamp": [
+          "#040e0c",
+          "#1b2827",
+          "#384544",
+          "#566563",
+          "#778684",
+          "#99a9a7",
+          "#bdcdcb",
+          "#e2f3f0"
+        ]
+      },
+      "limestone": {
+        "role": "neutral",
+        "displayName": "Limestone Render",
+        "canonical": "#e4e1db",
+        "tonalRamp": [
+          "#0d0b07",
+          "#272520",
+          "#44423d",
+          "#63615c",
+          "#85827d",
+          "#a7a59f",
+          "#ccc9c3",
+          "#f1eee8"
+        ]
+      },
+      "limestone-2": {
+        "role": "neutral",
+        "displayName": "Shaded Render",
+        "canonical": "#d8d4cc",
+        "tonalRamp": [
+          "#0d0b06",
+          "#28251f",
+          "#45423b",
+          "#64615a",
+          "#86827b",
+          "#a8a59d",
+          "#cdc9c1",
+          "#f2eee6"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Esplanade Ink",
+        "canonical": "#15140f",
+        "tonalRamp": [
+          "#0c0b07",
+          "#262520",
+          "#43423c",
+          "#63615b",
+          "#84827c",
+          "#a6a59e",
+          "#cbc9c2",
+          "#f0efe7"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Weathered Ink",
+        "canonical": "#4a4741",
+        "tonalRamp": [
+          "#0d0b06",
+          "#27251f",
+          "#45423c",
+          "#64615b",
+          "#85827b",
+          "#a8a59e",
+          "#ccc9c1",
+          "#f2eee7"
+        ]
+      },
+      "black": {
+        "role": "neutral",
+        "displayName": "Sign Black",
+        "canonical": "#0e0d0b",
+        "tonalRamp": [
+          "#0c0b09",
+          "#262523",
+          "#43423f",
+          "#62615e",
+          "#83827f",
+          "#a6a5a2",
+          "#cac9c6",
+          "#f0eeeb"
+        ]
+      },
+      "black-2": {
+        "role": "neutral",
+        "displayName": "Night Ground",
+        "canonical": "#171512",
+        "tonalRamp": [
+          "#0d0b08",
+          "#272521",
+          "#44423e",
+          "#63615d",
+          "#84827e",
+          "#a7a5a0",
+          "#cbc9c4",
+          "#f1eeea"
+        ]
+      },
+      "black-3": {
+        "role": "neutral",
+        "displayName": "Night Step",
+        "canonical": "#201d19",
+        "tonalRamp": [
+          "#0d0b07",
+          "#282420",
+          "#45413d",
+          "#64615c",
+          "#85827d",
+          "#a8a49f",
+          "#cdc8c3",
+          "#f2eee8"
+        ]
+      },
+      "lamp": {
+        "role": "neutral",
+        "displayName": "Lamp Ivory",
+        "canonical": "#ecebe7",
+        "tonalRamp": [
+          "#0c0b09",
+          "#262522",
+          "#43423f",
+          "#62615e",
+          "#83827f",
+          "#a6a5a1",
+          "#cac9c5",
+          "#efeeea"
+        ]
+      },
+      "lamp-muted": {
+        "role": "neutral",
+        "displayName": "Lamp Shade",
+        "canonical": "#b9b1a4",
+        "tonalRamp": [
+          "#100a03",
+          "#2a241a",
+          "#484136",
+          "#676054",
+          "#898175",
+          "#aca497",
+          "#d0c8bb",
+          "#f6ede0"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Name",
+        "purpose": "The venue name only: hero and footer."
+      },
+      "headline": {
+        "displayName": "Head",
+        "purpose": "Section titles, weekday names, address rows."
+      },
+      "title": {
+        "displayName": "Lead",
+        "purpose": "Hero sentence, intro statement, dish names, plate title."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text, 30 to 34ch."
+      },
+      "label": {
+        "displayName": "Small",
+        "purpose": "Nav, Day/Night switch, captions, footer, pill labels."
+      }
+    },
+    "lightStates": [
+      {
+        "name": "day",
+        "attribute": "html[data-light=\"day\"]",
+        "ground": "limestone",
+        "ink": "ink",
+        "muted": "muted",
+        "sea": "sea",
+        "seaBand": "sea-2",
+        "seaToday": "sea-today"
+      },
+      {
+        "name": "night",
+        "attribute": "html[data-light=\"night\"]",
+        "ground": "black-2",
+        "ink": "lamp",
+        "muted": "lamp-muted",
+        "sea": "sea-night",
+        "seaBand": "sea-2-night",
+        "seaToday": "sea-today-night",
+        "imageFilter": "brightness(.82) saturate(.92) on day-chapter photographs",
+        "menuField": "black-3"
+      }
+    ],
+    "shadows": [],
+    "scrims": [
+      {
+        "name": "hero-scrim-day",
+        "value": "linear-gradient(0deg, rgba(10,9,8,.66) 0%, rgba(10,9,8,.42) 45%, rgba(10,9,8,0) 72%), linear-gradient(180deg, rgba(10,9,8,.35) 0%, rgba(10,9,8,0) 16%)",
+        "purpose": "Neutral scrim under white type on the hero video, day."
+      },
+      {
+        "name": "hero-scrim-night",
+        "value": "linear-gradient(0deg, rgba(10,9,8,.74) 0%, rgba(10,9,8,.52) 50%, rgba(10,9,8,.1) 78%), linear-gradient(180deg, rgba(10,9,8,.4) 0%, rgba(10,9,8,0) 16%)",
+        "purpose": "Deeper scrim at night."
+      }
+    ],
+    "focus": {
+      "value": "outline: 2px solid #e2b866; outline-offset: 4px; border-radius: 2px",
+      "purpose": "Global focus-visible ring."
+    },
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(.16, 1, .3, 1)",
+        "purpose": "House ease for every transition."
+      },
+      {
+        "name": "light",
+        "value": "1.6s",
+        "purpose": "Day/Night crossfade: hero loops, grounds, inks, teal fields, photo dimming."
+      },
+      {
+        "name": "rise",
+        "value": "opacity .9s, transform .9s from translateY(24px)",
+        "purpose": "Text entrance on section entry."
+      },
+      {
+        "name": "picture-fade",
+        "value": "opacity 1.2s, transform 1.6s from scale(1.035)",
+        "purpose": "Picture entrance on section entry."
+      },
+      {
+        "name": "stagger",
+        "value": "75ms per item, capped at 600ms",
+        "purpose": "Order within a section: heading, text, picture."
+      },
+      {
+        "name": "control",
+        "value": ".3s to .4s",
+        "purpose": "Pill lift, arrow slide, round-button turn, link underline."
+      },
+      {
+        "name": "bar-solid",
+        "value": ".5s",
+        "purpose": "Top bar turning solid past the hero."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "transition-duration .01ms; entrances shown; no video autoplay",
+        "purpose": "prefers-reduced-motion fallback."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "tablet",
+        "value": "1000px"
+      },
+      {
+        "name": "phone",
+        "value": "680px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Book Pill",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one action: gold pill for booking, in the hero, the plate and the top bar.",
+      "html": "<a class=\"ds-pill\" href=\"#book\">Book a table</a>",
+      "css": ".ds-pill{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 1.6em;border-radius:999px;background:var(--gold,#e2b866);color:var(--gold-ink,#15120c);font:500 0.875rem/1 var(--font,'Work Sans',sans-serif);letter-spacing:.01em;text-decoration:none;white-space:nowrap;transition:transform .4s cubic-bezier(.16,1,.3,1),background-color .3s}.ds-pill:hover{background:#ecc77e;transform:translateY(-2px)}.ds-pill:active{transform:translateY(0) scale(.98)}.ds-pill:focus-visible{outline:2px solid #e2b866;outline-offset:4px;border-radius:999px}"
+    },
+    {
+      "name": "Book Pill, Small",
+      "kind": "button",
+      "refersTo": "button-primary-small",
+      "description": "Top-bar variant of the pill.",
+      "html": "<a class=\"ds-pill-sm\" href=\"#book\">Book a table</a>",
+      "css": ".ds-pill-sm{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:0 1.25em;border-radius:999px;background:#e2b866;color:#15120c;font:500 0.875rem/1 'Work Sans',sans-serif;letter-spacing:.01em;text-decoration:none;transition:transform .4s cubic-bezier(.16,1,.3,1),background-color .3s}.ds-pill-sm:hover{background:#ecc77e;transform:translateY(-2px)}.ds-pill-sm:focus-visible{outline:2px solid #e2b866;outline-offset:4px}"
+    },
+    {
+      "name": "Round Go Button",
+      "kind": "button",
+      "refersTo": "button-round",
+      "description": "Gold circle with a stroked arrow, sized to the display row it ends.",
+      "html": "<p class=\"ds-go\">Book <a class=\"ds-round\" href=\"#book\" aria-label=\"Book a table\"><svg viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path d=\"M3 10h13M11 5l5 5-5 5\"/></svg></a></p>",
+      "css": ".ds-go{display:flex;align-items:center;gap:.6em;margin:0;padding:16px;background:#0e0d0b;color:#ecebe7;font:300 3rem/1 'Work Sans',sans-serif;letter-spacing:-.03em}.ds-round{display:inline-grid;place-items:center;width:.9em;height:.9em;border-radius:50%;background:#e2b866;color:#15120c;transition:transform .4s cubic-bezier(.16,1,.3,1)}.ds-round svg{width:.45em;height:.45em;fill:none;stroke:currentColor;stroke-width:2.2}.ds-round:hover{transform:rotate(-45deg) scale(1.05)}.ds-round:focus-visible{outline:2px solid #e2b866;outline-offset:4px}"
+    },
+    {
+      "name": "Text Link with Arrow",
+      "kind": "custom",
+      "refersTo": "text-link",
+      "description": "Secondary action beside a pill; underlined, arrow slides on hover.",
+      "html": "<a class=\"ds-link\" href=\"#menu\">See the menu<svg viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path d=\"M3 10h13M11 5l5 5-5 5\"/></svg></a>",
+      "css": ".ds-link{display:inline-flex;align-items:center;gap:.5em;color:#15140f;font:500 1.0625rem/1.55 'Work Sans',sans-serif;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.22em}.ds-link svg{width:1.1em;height:1.1em;fill:none;stroke:currentColor;stroke-width:1.8;transition:transform .4s cubic-bezier(.16,1,.3,1)}.ds-link:hover svg{transform:translateX(4px)}.ds-link:focus-visible{outline:2px solid #e2b866;outline-offset:4px;border-radius:2px}"
+    },
+    {
+      "name": "Top Bar with Light Switch",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Fixed bar: monogram and name, section links, Day/Night switch, small pill. Solid state shown.",
+      "html": "<header class=\"ds-bar\"><a class=\"ds-brand\" href=\"#top\"><svg viewBox=\"0 0 48 48\" aria-hidden=\"true\"><g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"square\"><circle cx=\"24\" cy=\"24\" r=\"22\" stroke-width=\"1.8\"/><circle cx=\"24\" cy=\"24\" r=\"18.6\" stroke-width=\"1\"/><path d=\"M13 14.5h14M20 14.5v20\" stroke-width=\"2.4\"/><path d=\"M27 11v22.5h8.5\" stroke-width=\"2.4\"/></g></svg><span>The Lounge</span></a><nav class=\"ds-links\"><a href=\"#menu\">Menu</a><a href=\"#nights\">Nights</a><a href=\"#bar\">Bar</a><a href=\"#visit\">Visit</a></nav><div class=\"ds-switch\"><button aria-pressed=\"true\">Day</button><button aria-pressed=\"false\">Night</button></div><a class=\"ds-bar-pill\" href=\"#book\">Book a table</a></header>",
+      "css": ".ds-bar{display:flex;align-items:center;gap:2rem;padding:14px 24px;background:#e4e1db;color:#15140f;font:400 0.875rem/1.4 'Work Sans',sans-serif}.ds-brand{display:flex;align-items:center;gap:.7rem;margin-right:auto;color:inherit;font-weight:500;text-decoration:none}.ds-brand svg{width:34px;height:34px;color:#e2b866}.ds-links{display:flex;gap:1.5rem}.ds-links a{color:inherit;text-decoration:underline;text-decoration-color:transparent;text-underline-offset:.35em;padding:.4rem 0;transition:text-decoration-color .3s}.ds-links a:hover{text-decoration-color:currentColor}.ds-switch{display:flex;gap:.2rem}.ds-switch button{font:inherit;color:inherit;background:none;border:0;min-height:40px;padding:0 .55rem;cursor:pointer}.ds-switch button[aria-pressed=true]{font-weight:500;text-decoration:underline;text-underline-offset:.35em}.ds-switch button:focus-visible,.ds-links a:focus-visible{outline:2px solid #e2b866;outline-offset:4px;border-radius:2px}.ds-bar-pill{display:inline-flex;align-items:center;min-height:40px;padding:0 1.25em;border-radius:999px;background:#e2b866;color:#15120c;font-weight:500;text-decoration:none}.ds-bar-pill:hover{background:#ecc77e}"
+    },
+    {
+      "name": "Week Rows",
+      "kind": "custom",
+      "refersTo": "week-row",
+      "description": "Signature: banded teal fields, one per day; today takes the lighter teal and carries the live status.",
+      "html": "<ol class=\"ds-week\"><li><span class=\"ds-day\">Monday</span><span>Steak special, live music</span><span class=\"ds-hrs\">12pm to 9pm</span></li><li class=\"is-today\"><span class=\"ds-day\">Tuesday</span><span>Seafood platter for one, $33<b>Today. Open now until 9pm</b></span><span class=\"ds-hrs\">12pm to 9pm</span></li><li><span class=\"ds-day\">Wednesday</span><span>Lunch through dinner</span><span class=\"ds-hrs\">12pm to 9pm</span></li></ol>",
+      "css": ".ds-week{list-style:none;margin:0;padding:0;background:#1d4a4f;color:#eef1ee;font:400 1.0625rem/1.55 'Work Sans',sans-serif}.ds-week li{display:grid;grid-template-columns:5fr 4fr 3fr;align-items:baseline;gap:1rem 2rem;padding:22px 24px;transition:background-color 1.6s cubic-bezier(.16,1,.3,1)}.ds-week li:nth-child(odd){background:#245a60}.ds-week li.is-today{background:#2f6d73}.ds-week b{display:block;font-weight:500}.ds-day{font:300 2.5rem/1 'Work Sans',sans-serif;letter-spacing:-.03em}.is-today .ds-day{font-weight:400}.ds-hrs{text-align:right;color:#c3d3d1;font-variant-numeric:tabular-nums}.is-today .ds-hrs{color:#eef1ee}"
+    },
+    {
+      "name": "Menu Row",
+      "kind": "custom",
+      "refersTo": "menu-row",
+      "description": "Category, dish at lead size, note; no rules between rows, spacing only.",
+      "html": "<ul class=\"ds-menu\"><li><span class=\"k\">Raw</span><span class=\"d\">Oysters</span><span class=\"n\">Sunday special</span></li><li><span class=\"k\">Small plates</span><span class=\"d\">Scallops in the shell</span><span class=\"n\">Chilli butter, crumb, Avruga</span></li></ul>",
+      "css": ".ds-menu{list-style:none;margin:0;padding:32px 24px;background:#d8d4cc;color:#15140f;font:400 1.0625rem/1.55 'Work Sans',sans-serif}.ds-menu li{display:grid;grid-template-columns:24% 1fr auto;gap:1rem;align-items:baseline;padding-bottom:26px}.ds-menu .k,.ds-menu .n{color:#4a4741}.ds-menu .n{text-align:right}.ds-menu .d{font:400 1.5rem/1.2 'Work Sans',sans-serif;letter-spacing:-.01em}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Light Changes, the Room Stays",
+    "overview": "One structure, two lights. Every surface is built once and lit twice: `data-light=\"day\"` gives limestone render, near-black ink and Broadwater teal; `data-light=\"night\"` dims the same chapters to sign-black with lamp-ivory ink. The light is chosen before first paint from Paradise Point's real time (Queensland, UTC+10, sunset by month) and a Day/Night switch in the top bar overrides it for the session. The change is a slow 1.6s crossfade, never a cut.\n\nSpace is generous and the photographs carry the page. Sections are separated by fields of colour and tone steps, never by lines or boxes. Type is a single sans family, light at display size and tightly tracked, set large enough to read solidly on the pale ground. Gold appears only where the visitor can act. The page reads top to bottom as day turning into night: limestone chapters, a teal week, then black bar, booking, address and footer.\n\nThe system rejects the category's dark-luxury template (black, gold, italic serif) used wholesale, and the cream-and-serif restaurant default. Black and gold exist here because they are the venue's own sign, and they arrive only after dark.",
+    "keyCharacteristics": [
+      "Two light states on one DOM; tokens swap, layout does not.",
+      "One family (Work Sans 300/400/500), five fluid steps.",
+      "Separation by fields and tone, never by rules, borders or shadows.",
+      "Gold is the action colour and nothing else.",
+      "Square, uncropped-subject photography; pill and round controls.",
+      "Slow light crossfade as the signature; quiet staggered entrances."
+    ],
+    "rules": [
+      {
+        "name": "The One Action Rule",
+        "body": "Gold fills only things you can press or follow (book, go, the focus ring) and the TL monogram that is its source. It never colours a heading, a field or an ornament.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Lights Rule",
+        "body": "Any new surface defines its ground and ink through `--ground`, `--ground-ink` and `--ground-muted` (or sits in a fixed night field), so the Day/Night switch reaches it. A day chapter that does not dim at night is a bug.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tone Step Rule",
+        "body": "Adjacent sections separate by a change of field (limestone to limestone-2, black to black-2 to black-3, sea to sea-2), never by a line.",
+        "section": "colors"
+      },
+      {
+        "name": "The Solid Light Rule",
+        "body": "Weight 300 is the lightest allowed, and only at lead size and above. Never set a thinner weight or a display serif on the limestone ground.",
+        "section": "typography"
+      },
+      {
+        "name": "The Name Leads Rule",
+        "body": "The display step belongs to the venue name. Section titles stop at the head step.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Field Rule",
+        "body": "Surfaces never lift. If something needs emphasis, change its field (as the today row does) or its weight, not its elevation.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Scrim-Only Gradient Rule",
+        "body": "A gradient is allowed only as a neutral scrim between a moving photograph and type set on it. No colour gradients, no decorative washes.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** route every new surface's ground and ink through the light tokens so night reaches it.",
+      "**Do** use the gold pill for booking and the gold round button for \"go\"; keep gold to actions.",
+      "**Do** separate sections with a field or tone step (limestone to limestone-2, black to black-2 to black-3).",
+      "**Do** set titles in Work Sans 300 at the head step with -0.03em tracking, and keep running text to about 30 to 34ch.",
+      "**Do** show photographs square-cornered and whole, at their own aspect ratio.",
+      "**Do** keep motion to the 1.6s light crossfade and the staggered rise and fade, with the reduced-motion fallback."
+    ],
+    "donts": [
+      "**Don't** draw rules, outlines or boxes around buttons, panels or rows.",
+      "**Don't** add box shadows, glows, blur or backdrop filters to UI; the neon lives in the photographs and the monogram, not in CSS effects.",
+      "**Don't** use gradients other than neutral scrims under type on moving imagery.",
+      "**Don't** introduce a second typeface, a display serif, italics as a luxury cue, or weights below 300.",
+      "**Don't** use gold for headings, fields or decoration.",
+      "**Don't** crop a photograph so its subject is cut off."
+    ]
+  }
+}

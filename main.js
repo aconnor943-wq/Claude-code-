@@ -72,8 +72,7 @@
     ['.visit', ['.visit__row']],
     ['.foot', ['.foot__top', '.foot__mono', '.foot__name']],
   ];
-  // pictures animate with a clip-path wipe; Chromium reports a fully clipped element as not intersecting,
-  // so each one is observed through its unclipped parent
+  // pictures fade and settle as their frame enters; each is observed through its parent frame
   const reveals = []; // [watched element, element that animates]
   groups.forEach(([section, parts]) => {
     let i = 0;
