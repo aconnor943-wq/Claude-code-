@@ -143,6 +143,7 @@ html { scrollbar-color: var(--lamp-muted) var(--black); }
 .hero__status { font-size: var(--step-small); display: flex; align-items: center; gap: .55rem; }
 .hero__status .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
 .hero__status .dot.is-closed { background: var(--lamp-muted); }
+.hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 2rem; }
 
 /* ---------- intro: a short paragraph, then the room at full width ---------- */
 .intro { padding: var(--gap) 0 0; }
@@ -186,6 +187,11 @@ html { scrollbar-color: var(--lamp-muted) var(--black); }
 .menu__rows .d { font: 400 var(--step-lead)/1.2 var(--font); letter-spacing: -.01em; }
 .menu__rows .n { color: var(--ground-muted); text-align: right; }
 .menu__foot { grid-column: 6 / 13; grid-row: 2; margin-top: 2rem; font-size: var(--step-small); color: var(--ground-muted); max-width: 44ch; }
+/* the menu's own page */
+.menu--page { padding-top: calc(var(--gap) + 40px); min-height: 100svh; }
+.menu__photo--b { grid-row: 3; margin-top: 56px; }
+.menu-cta { background: var(--limestone-2); padding: 0 var(--m) var(--gap); }
+[data-light="night"] .menu-cta { background: var(--black-3); }
 
 /* ---------- nights: the week at dusk ---------- */
 .nights { background: var(--sea); color: var(--sea-ink); padding: var(--gap) 0 0; transition: background-color var(--light) var(--ease); }
@@ -273,6 +279,7 @@ html { scrollbar-color: var(--lamp-muted) var(--black); }
 @media (max-width: 1000px) {
   .links { display: none; }
   .menu__photo { grid-column: 1 / 8; grid-row: 1; margin-bottom: 56px; }
+  .menu__photo--b { grid-column: 6 / -1; grid-row: auto; margin-top: 0; }
   .menu__rows, .menu__foot { grid-column: 1 / -1; grid-row: auto; }
   .book__text { grid-column: 1 / -1; margin-bottom: 2.5rem; }
   .book__widget { grid-column: 1 / -1; }

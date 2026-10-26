@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en-AU" data-light="day">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Menu · The Lounge, Paradise Point</title>
+  <meta name="description" content="The menu at The Lounge, 44 The Esplanade, Paradise Point: oysters, scallops, calamari, Moreton Bay bugs, steaks and the weekly specials.">
+  <meta name="theme-color" content="#0e0d0b">
+  <meta property="og:title" content="The Lounge, Paradise Point">
+  <meta property="og:description" content="Bar and kitchen on the Esplanade, Paradise Point. Open seven days.">
+  <meta property="og:image" content="assets/img/sign.jpg">
+  <link rel="icon" href="assets/monogram.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // Set the light before first paint: night after sunset in Paradise Point (Queensland, UTC+10, no daylight saving)
+    (function () {
+      var d = new Date(Date.now() + 10 * 3600e3), h = d.getUTCHours() + d.getUTCMinutes() / 60;
+      var sunset = [18.75, 18.5, 18.08, 17.58, 17.25, 17.08, 17.25, 17.5, 17.75, 18, 18.33, 18.67][d.getUTCMonth()];
+      var light = (h >= sunset || h < 6) ? 'night' : 'day';
+      try { light = sessionStorage.getItem('light') || light; } catch (e) {}
+      document.documentElement.dataset.light = light;
+      document.documentElement.classList.add('js');
+    })();
+  </script>
+</head>
+<body class="page-menu">
+
+<header class="bar-top is-solid" data-nav>
+  <a class="brand" href="index.html" aria-label="The Lounge, Paradise Point: home">
+    <svg class="mono" viewBox="0 0 48 48" aria-hidden="true"><use href="#tl"/></svg>
+    <span>The Lounge</span>
+  </a>
+  <nav class="links" aria-label="Sections">
+    <a href="#menu">Menu</a>
+    <a href="index.html#nights">Nights</a>
+    <a href="index.html#bar">Bar</a>
+    <a href="index.html#visit">Visit</a>
+  </nav>
+  <div class="light-switch" role="group" aria-label="Light">
+    <button type="button" data-set-light="day" aria-pressed="true">Day</button>
+    <button type="button" data-set-light="night" aria-pressed="false">Night</button>
+  </div>
+  <a class="pill pill--small" href="index.html#book">Book a table</a>
+</header>
+
+<main id="top">
+  <section class="menu menu--page chapter-day" id="menu" aria-labelledby="menu-title">
+    <h1 id="menu-title" class="menu__title"><span>Coastal plates,</span> <span>made to share</span></h1>
+    <div class="menu__body">
+      <figure class="menu__photo">
+        <img src="assets/img/calamari-closeup.jpg" data-night="assets/img/night/calamari-closeup.jpg" alt="Close-up of salt and pepper calamari with parsley and a lemon wedge" width="1597" height="1292" decoding="async">
+        <figcaption>Salt and pepper calamari.</figcaption>
+      </figure>
+      <figure class="menu__photo menu__photo--b">
+        <img src="assets/img/scallops.jpg" data-night="assets/img/night/scallops.jpg" alt="Four scallops in the shell with chilli butter, toasted crumb, black Avruga pearls, micro herbs and a lemon wedge, on a stone-coloured plate" width="1831" height="1290" decoding="async">
+        <figcaption>Scallops in the shell.</figcaption>
+      </figure>
+      <ul class="menu__rows">
+        <li><span class="k">Raw</span><span class="d">Oysters</span><span class="n">Sunday special</span></li>
+        <li><span class="k">Small plates</span><span class="d">Scallops in the shell</span><span class="n">Chilli butter, crumb, Avruga</span></li>
+        <li><span class="k">Small plates</span><span class="d">Salt and pepper calamari</span><span class="n">Parsley, lemon</span></li>
+        <li><span class="k">From the sea</span><span class="d">Moreton Bay bugs</span><span class="n">To share</span></li>
+        <li class="gap"><span class="k">From the grill</span><span class="d">Steaks, up to a 1kg T&#8209;bone</span><span class="n">Monday special</span></li>
+        <li><span class="k">From the oven</span><span class="d">Whole roasted chicken</span><span class="n">To share</span></li>
+        <li><span class="k">Tuesdays</span><span class="d">Seafood platter for one</span><span class="n">$33</span></li>
+      </ul>
+      <p class="menu__foot">A taste of the menu, as listed on OpenTable. The full list changes with the season, so ask what came in today.</p>
+    </div>
+  </section>
+
+  <section class="menu-cta" aria-label="Book">
+    <a class="pill" href="index.html#book">Book a table</a>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="foot__top">
+    <p>44 The Esplanade, Paradise Point QLD 4216</p>
+    <p>Hours as listed on OpenTable. Public holidays may differ.</p>
+    <a class="foot__up" href="#top">Back to top</a>
+  </div>
+  <div class="foot__close">
+    <svg class="foot__mono" viewBox="0 0 48 48" aria-hidden="true"><use href="#tl"/></svg>
+    <p class="foot__name">The Lounge</p>
+  </div>
+  <div class="foot__meta">
+    <p><a href="menu.html">Menu</a>, <a href="index.html#nights">Nights</a>, <a href="index.html#bar">Bar</a>, <a href="index.html#book">Book</a></p>
+    <p>Please drink responsibly.</p>
+    <p>Paradise Point, <span data-year>2026</span></p>
+  </div>
+</footer>
+
+<!-- TL monogram, drawn after the venue's neon sign -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="tl" viewBox="0 0 48 48">
+    <g fill="none" stroke="currentColor" stroke-linecap="square">
+      <circle cx="24" cy="24" r="22" stroke-width="1.8"/>
+      <circle cx="24" cy="24" r="18.6" stroke-width="1"/>
+      <path d="M13 14.5h14M20 14.5v20" stroke-width="2.4"/>
+      <path d="M27 11v22.5h8.5" stroke-width="2.4"/>
+    </g>
+  </symbol>
+</svg>
+
+<script src="main.js" defer></script>
+<script>
+  // Day / Night switch, same as the front page
+  (function () {
+    var root = document.documentElement;
+    var btns = document.querySelectorAll('[data-set-light]');
+    var mark = function () { btns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.setLight === root.dataset.light)); }); };
+    btns.forEach(function (b) { b.addEventListener('click', function () {
+      root.dataset.light = b.dataset.setLight; mark();
+      try { sessionStorage.setItem('light', b.dataset.setLight); } catch (e) {}
+    }); });
+    mark();
+    var y = document.querySelector('[data-year]'); if (y) y.textContent = new Date().getFullYear();
+  })();
+</script>
+</body>
+</html>

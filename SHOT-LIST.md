@@ -27,7 +27,7 @@ The night loop also plays at the top of "The bar after dark".
 
 **Hold off on anything shot with the Halloween decorations up** (pumpkins, spiders, skeleton, cobwebs on the paintings). The 26 Oct bar pan and the wide terrace photo are both great angles, but the props are in every frame and can't be cropped out cleanly. Reshoot the same two after 31 October:
 - the bar: a slow pan along the bar with the arches fully in frame, then the same move at night
-- the terrace: the same wide shot of the set tables under the ferns, then the same spot at night
+- the terrace: the same wide shot of the set tables, then the same spot at night. The site uses only the bottom strip of the 26 Oct photo for now
 
 Drone: one slow pull-back from the sign out over the Esplanade towards the Broadwater, once in the afternoon and once at dusk with the sign lit. These can become the opening video if they come out well.
 
@@ -37,10 +37,10 @@ Day versions go in `assets/img/`, night versions in `assets/img/night/`, with th
 
 | File name | What it shows | Day | Night |
 | --- | --- | --- | --- |
-| `terrace-ferns.jpg` | Terrace canopy with the hanging ferns, wide (shot about 2.5:1, or wider and I'll crop) | have | needed |
+| `terrace-tables.jpg` | The terrace set for service, tables and chairs, wide. Now cropped to just the tables from the 26 Oct photo to keep the Halloween props out; a reshoot can show more (shoot wide, I'll crop) | have | needed (table lights on) |
 | `sign.jpg` | The black oval sign. Now only used as the link preview image; the page plays `sign.mp4` | have | — |
-| `scallops.jpg` | Scallops plate, whole plate in frame with space around it | have | needed (table lamp light) |
-| `calamari-closeup.jpg` | Calamari close-up | have (reshoot with space around the plate) | needed |
+| `scallops.jpg` | Scallops plate (menu page), whole plate in frame with space around it | have | needed (table lamp light) |
+| `calamari-closeup.jpg` | Calamari close-up (menu page) | have (reshoot with space around the plate) | needed |
 | `glassware.jpg` | Back bar arches and glassware | have | needed |
 | `bartender.jpg` | Bartender working under the arches | have | needed |
 

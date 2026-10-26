@@ -88,8 +88,6 @@
   // ---------- entrances: heading, then text, then picture, staggered ----------
   const groups = [
     ['.intro', ['.intro__statement', '.intro__note']],
-    ['.plate', ['.plate__img', '.plate__copy', '.plate__actions']],
-    ['.menu', ['.menu__title', '.menu__photo img', '.menu__rows li', '.menu__foot']],
     ['.nights', ['.nights__title', '.nights__rows li']],
     ['.bar', ['.bar__title']],
     ['.book', ['.book__title', '.book__text p', '.book__widget']],
