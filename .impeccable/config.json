@@ -38,6 +38,15 @@
         ],
         "createdAt": "2026-10-22T23:38:24.162Z",
         "reason": "Claude: false positive - detector reads h1/h2 as 16px without styles.css; rendered h1 is clamp(3rem..7.6rem), h2 clamp(2.4rem..4.6rem)"
+      },
+      {
+        "rule": "gray-on-color",
+        "value": "#c3d3d1",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-26T23:46:30.877Z",
+        "reason": "Claude: --sea-muted is a pale tint of the sea teal, not a neutral gray; about 6.4:1 on #1d4a4f, used for the weekly-special descriptions and prices"
       }
     ]
   },
