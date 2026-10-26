@@ -18,14 +18,14 @@ A neighbourhood venue on the Broadwater with a lit, arched back bar, a fern-hung
 ## Operating Context
 - Bookings run through OpenTable (restaurant ID 212261, confirmed from the venue's OpenTable admin). The site embeds OpenTable's reservation widget and links to the OpenTable listing as a fallback.
 - Hours (from the OpenTable listing, to be confirmed): Mon–Thu 12pm–9pm, Fri 12pm–11pm, Sat 11:30am–11pm, Sun 11:30am–8pm. Queensland time, no daylight saving.
-- Weekly nights (from the listing): Sunday oyster special with live music; Monday steak special with live music; Tuesday seafood platter for one, $33.
+- Weekly specials (from the venue's printed What's On menu, Oct 2026): Monday steak special + live music, $30; Tuesday seafood platter for one, $36; Wednesday seafood hotpot, $33; Thursday set menu, 2 courses $60 / 3 courses $75; Friday and Saturday live music 7:30 to 11pm; Sunday oyster special, 6 for $25. Happy hour Mon to Fri 4 to 6pm ($9 wines, $9.50 beers, $17 cocktails, select items). Lunch for two Mon to Fri 12 to 3pm, $65. Prices subject to change; 15% public holiday surcharge.
 - Menu items named in the OpenTable listing (to be confirmed by the owner): oysters, scallops, Moreton Bay bugs, steaks including a 1kg T-bone, whole roasted chickens, fresh seafood. Scallops in the shell and salt and pepper calamari, as described on the site, are confirmed by the owner.
 
 ## Capabilities and Constraints
 - Static HTML/CSS/JS, no build step; deployable to any static host.
 - No booking backend of its own; table-level selection is not supported by the OpenTable widget.
 - Phone number: not yet known; must not be invented.
-- Menu prices: unknown apart from the $33 platter; do not invent.
+- Menu prices: only the What's On specials above are known; do not invent others.
 
 ## Brand Commitments
 - Name: The Lounge, Paradise Point. Monogram: TL in a gold neon double ring.
