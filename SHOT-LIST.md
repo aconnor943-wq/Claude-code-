@@ -23,6 +23,12 @@ To swap something in, save the new file under the same name and push it.
 
 The night loop also plays at the top of "The bar after dark".
 
+`assets/video/sign.mp4` is the slow drift past the sign next to "Find the black oval sign". It's cut from the 19 Oct clip, cropped tight so the Halloween pumpkin stays out of frame, and graded warmer with deeper blacks. A longer, steadier pass (8–10 seconds, after the decorations come down) would let it run wider and show more of the Esplanade.
+
+**Hold off on anything shot with the Halloween decorations up** (pumpkins, spiders, skeleton, cobwebs on the paintings). The 26 Oct bar pan and the wide terrace photo are both great angles, but the props are in every frame and can't be cropped out cleanly. Reshoot the same two after 31 October:
+- the bar: a slow pan along the bar with the arches fully in frame, then the same move at night
+- the terrace: the same wide shot of the set tables under the ferns, then the same spot at night
+
 Drone: one slow pull-back from the sign out over the Esplanade towards the Broadwater, once in the afternoon and once at dusk with the sign lit. These can become the opening video if they come out well.
 
 ## Photos
@@ -32,7 +38,7 @@ Day versions go in `assets/img/`, night versions in `assets/img/night/`, with th
 | File name | What it shows | Day | Night |
 | --- | --- | --- | --- |
 | `terrace-ferns.jpg` | Terrace canopy with the hanging ferns, wide (shot about 2.5:1, or wider and I'll crop) | have | needed |
-| `sign.jpg` | The black oval sign, all of "THE LOUNGE / PARADISE POINT" in frame | have | needed (sign lit) |
+| `sign.jpg` | The black oval sign. Now only used as the link preview image; the page plays `sign.mp4` | have | — |
 | `scallops.jpg` | Scallops plate, whole plate in frame with space around it | have | needed (table lamp light) |
 | `calamari-closeup.jpg` | Calamari close-up | have (reshoot with space around the plate) | needed |
 | `glassware.jpg` | Back bar arches and glassware | have | needed |

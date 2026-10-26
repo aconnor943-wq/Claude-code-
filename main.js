@@ -107,7 +107,7 @@
       reveals.push([pic ? el.parentElement : el, el]);
     }));
   });
-  document.querySelectorAll('.intro__wide img, .intro__photo img, .bar__img img').forEach((img) => {
+  document.querySelectorAll('.intro__wide img, .intro__photo img, .intro__photo video, .bar__img img').forEach((img) => {
     img.classList.add('wipe');
     reveals.push([img.parentElement, img]);
   });
@@ -125,13 +125,15 @@
     reveals.forEach(([, el]) => el.classList.add('is-in'));
   }
 
-  // ---------- the bar's evening loop plays only while it is on screen ----------
-  const barVideo = document.querySelector('[data-bar-video]');
-  if (barVideo && !reduceMotion && 'IntersectionObserver' in window) {
-    new IntersectionObserver(([e]) => {
-      if (e.isIntersecting) { barVideo.preload = 'auto'; barVideo.play().catch(() => {}); }
-      else barVideo.pause();
-    }, { threshold: 0.2 }).observe(barVideo);
+  // ---------- the sign and bar loops play only while they are on screen ----------
+  const inViewVideos = document.querySelectorAll('[data-inview-video]');
+  if (inViewVideos.length && !reduceMotion && 'IntersectionObserver' in window) {
+    const vio = new IntersectionObserver((entries) => entries.forEach((e) => {
+      const v = e.target;
+      if (e.isIntersecting) { v.preload = 'auto'; v.play().catch(() => {}); }
+      else v.pause();
+    }), { threshold: 0.2 });
+    inViewVideos.forEach((v) => vio.observe(v));
   }
 
   // ---------- booking: hide the fallback once OpenTable's iframe arrives ----------
