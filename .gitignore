@@ -6,3 +6,6 @@ preview.html
 client-questionnaire-the-lounge.md
 client-templates/
 ai-reporting-dashboard/
+
+# Python cache from the design skills
+__pycache__/
