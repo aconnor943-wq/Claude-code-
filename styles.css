@@ -110,7 +110,7 @@ html { scrollbar-color: var(--lamp-muted) var(--black); }
 .brand { display: flex; align-items: center; gap: .7rem; text-decoration: none; font-weight: 500; font-size: var(--step-small); margin-right: auto; }
 .mono { width: 34px; height: 34px; color: var(--gold); flex: none; }
 .links { display: flex; gap: clamp(1rem, 2vw, 2rem); font-size: var(--step-small); }
-.links a { text-decoration: underline; text-decoration-color: transparent; text-underline-offset: .35em; padding: .4rem 0; transition: text-decoration-color .3s; }
+.links a { min-width: 28px; text-align: center;  text-decoration: underline; text-decoration-color: transparent; text-underline-offset: .35em; padding: .4rem 0; transition: text-decoration-color .3s; }
 .links a:hover { text-decoration-color: currentColor; }
 .light-switch { display: flex; gap: .2rem; font-size: var(--step-small); }
 .light-switch button { min-height: 40px; padding: 0 .55rem; opacity: 1; font-weight: 400; transition: color .3s; }
@@ -261,6 +261,7 @@ html { scrollbar-color: var(--lamp-muted) var(--black); }
 .book__widget { grid-column: 6 / 13; min-height: 20rem; display: flex; align-items: flex-start; }
 .book__widget iframe { width: 100% !important; max-width: 100%; border: 0; }
 .book__fallback { color: var(--lamp-muted); }
+.book__fallback a { display: inline-block; padding: 4px 0; }
 .book__fallback a { color: var(--gold); }
 .book__widget.is-loaded .book__fallback { display: none; }
 
@@ -286,6 +287,8 @@ html { scrollbar-color: var(--lamp-muted) var(--black); }
 .foot { background: var(--black-2); color: var(--lamp); min-height: 90svh; padding: 40px var(--m) 28px; display: flex; flex-direction: column; }
 .foot__top { display: grid; grid-template-columns: 1fr 1fr auto; gap: 1rem 2rem; font-size: var(--step-small); }
 .foot__up { text-decoration: underline; }
+/* footer links: tall enough to tap */
+.foot__up, .foot__meta a { display: inline-block; padding: 11px 2px; min-width: 24px; }
 .foot__close { margin-top: auto; }
 .foot__mono { display: block; width: clamp(72px, 9vw, 132px); height: auto; aspect-ratio: 1; color: var(--gold); margin-bottom: clamp(20px, 3vw, 40px); }
 .foot__name { font: 300 var(--step-name)/.85 var(--font); letter-spacing: -.04em; white-space: nowrap; }
