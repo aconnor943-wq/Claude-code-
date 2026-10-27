@@ -6,6 +6,8 @@ To swap something in, save the new file under the same name and push it.
 
 ## How to shoot
 
+- **No decorations:** take down seasonal props (Halloween, Christmas) first, or shoot around them. Every current photo and clip has them in frame, so the whole set is being reshot.
+
 - **Empty venue:** before opening for day shots, and after close or before service for night shots. Set the tables as if guests are about to sit down.
 - **Stable camera:** use a tripod for photos. For video use a gimbal or tripod, and make one slow, smooth move per clip (a push-in, a slide or a slow pan), or hold completely still.
 - **Clip length:** 8–12 seconds of clean footage per clip. The site trims and loops it.
@@ -14,34 +16,20 @@ To swap something in, save the new file under the same name and push it.
 - **Framing:** day and night shots of the same spot should be taken from the same position, same height, same lens. Then the fade between them looks like the lights changing, not a cut.
 - **Size:** landscape, 4K if possible, highest quality. I'll compress everything for the web.
 
-## Videos (opening screen)
+## Full reset: everything on the site
 
-| File | Day | Night |
-| --- | --- | --- |
-| `assets/video/day.mp4` | Dining room in daylight: banquette, cove light, the beach paintings. Empty, tables set. | — |
-| `assets/video/night.mp4` | — | Back bar lit up, arches glowing, room lights down, table lamps on. Empty. |
+Shoot every spot twice from the same position: once by day, once at night. Tick them off as you go.
 
-The night loop also plays at the top of "The bar after dark".
+| # | Spot | Type | Where it shows | Day | Night |
+| --- | --- | --- | --- | --- | --- |
+| 1 | Dining room, banquette and cove light, tables set | Video, 8–12 s, slow push-in or pan | Opening screen (right half) | ☐ | ☐ |
+| 2 | Terrace, wide across the set tables under the ferns | Photo, landscape, shoot wide | Under "Lunch in the light…" | ☐ | ☐ |
+| 3 | The black oval sign, all of THE LOUNGE / PARADISE POINT in frame | Video, 5–8 s, slow drift past it | Next to the opening-days line | ☐ | ☐ (sign lit) |
+| 4 | The bar: slow pan along it with all three arches in frame | Video, 8–12 s | Top of "The bar after dark" | ☐ | ☐ |
+| 5 | Back bar arches and glassware | Photo | Bar section, first photo | ☐ | ☐ |
+| 6 | Bartender at work under the arches | Photo | Bar section, second photo | ☐ | ☐ |
+| 7 | Drone: pull back from the sign out over the Esplanade to the Broadwater | Video, 10–15 s | Possible opening video | ☐ (afternoon) | ☐ (dusk, sign lit) |
 
-`assets/video/sign.mp4` is the slow drift past the sign next to "Find the black oval sign". It's cut from the 19 Oct clip, cropped tight so the Halloween pumpkin stays out of frame, and graded warmer with deeper blacks. A longer, steadier pass (8–10 seconds, after the decorations come down) would let it run wider and show more of the Esplanade.
+Optional, for later: dish photos (shot at a set table, not on the kitchen pass) if the menu page gets pictures again.
 
-**Hold off on anything shot with the Halloween decorations up** (pumpkins, spiders, skeleton, cobwebs on the paintings). The 26 Oct bar pan and the wide terrace photo are both great angles, but the props are in every frame and can't be cropped out cleanly. Reshoot the same two after 31 October:
-- the bar: a slow pan along the bar with the arches fully in frame, then the same move at night
-- the terrace: the same wide shot of the set tables, then the same spot at night. The site uses only the bottom strip of the 26 Oct photo for now
-
-Drone: one slow pull-back from the sign out over the Esplanade towards the Broadwater, once in the afternoon and once at dusk with the sign lit. These can become the opening video if they come out well.
-
-## Photos
-
-Day versions go in `assets/img/`, night versions in `assets/img/night/`, with the same file name.
-
-| File name | What it shows | Day | Night |
-| --- | --- | --- | --- |
-| `terrace-tables.jpg` | The terrace set for service, tables and chairs, wide. Now cropped to just the tables from the 26 Oct photo to keep the Halloween props out; a reshoot can show more (shoot wide, I'll crop) | have | needed (table lights on) |
-| `sign.jpg` | The black oval sign. Now only used as the link preview image; the page plays `sign.mp4` | have | — |
-| `scallops.jpg` | Scallops plate (menu page), whole plate in frame with space around it | have | needed (table lamp light) |
-| `calamari-closeup.jpg` | Calamari close-up (menu page) | have (reshoot with space around the plate) | needed |
-| `glassware.jpg` | Back bar arches and glassware | have | needed |
-| `bartender.jpg` | Bartender working under the arches | have | needed |
-
-For food, shoot at a set table in the dining room or on the terrace rather than on the kitchen pass, so the background is the venue, not the steel bench.
+Send the files as they are; they get cropped, graded and named on the way in. Files on the site now, all to be replaced: `assets/video/day.mp4`, `night.mp4`, `sign.mp4`, and `assets/img/terrace-tables.jpg`, `glassware.jpg`, `bartender.jpg`. Night photos go in `assets/img/night/` under the same name as the day one.
