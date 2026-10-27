@@ -64,14 +64,16 @@ DRINKS = grouped(DRINKS, [
     ('beer', 'Beer and cider', ['tap-beer', 'bottled-beer', 'imported-beer', 'cider']),
     ('spirits', 'Spirits', ['rum', 'vodka', 'gin', 'tequila', 'whiskey', 'bourbon', 'cognac', 'digestif']),
 ])
-CHAPTERS = [('food', 'Food', FOOD), ('kids', 'Kids', KIDS), ('desserts', 'Dessert', DESSERT), ('drinks', 'Drinks', DRINKS)]
-nav = ''.join(f'<a href="#{cid}">{t}</a>' for cid, t, _ in CHAPTERS)
+# (anchor, jump-bar label, heading, sections)
+CHAPTERS = [('food', 'Food', 'From the kitchen', FOOD), ('kids', 'Kids', 'For the little ones', KIDS),
+            ('desserts', 'Dessert', 'Something sweet', DESSERT), ('drinks', 'Drinks', 'From the bar', DRINKS)]
+nav = ''.join(f'<a href="#{cid}">{t}</a>' for cid, t, _, _ in CHAPTERS)
 body = [f'''  <section class="mp" id="menu" aria-labelledby="menu-title">
     <header class="mp__head">
       <h1 id="menu-title" class="mp__title">Menu</h1>
     </header>
     <nav class="mp__nav" aria-label="Menu sections">{nav}<a href="index.html#nights">Weekly specials</a></nav>''']
-for cid, t, secs in CHAPTERS:
+for cid, _, t, secs in CHAPTERS:
     body.append(f'    <div class="mp__chapter" id="{cid}">\n      <h2 class="mp__chapter-title">{t}</h2>\n      <div class="mp__grid mp__grid--{cid}">')
     body += ['        ' + section(s).replace('\n', '\n        ') for s in secs]
     body.append('      </div>\n    </div>')
@@ -87,4 +89,4 @@ page = open(path).read()
 a = page.index('<main id="top">') + len('<main id="top">\n')
 b = page.index('</main>')
 open(path, 'w').write(page[:a] + '\n'.join(body) + page[b:])
-print('items', sum(len(p[5]) for _, _, secs in CHAPTERS for s in secs for p in (s[3] if s[0] == 'group' else [s])))
+print('items', sum(len(p[5]) for _, _, _, secs in CHAPTERS for s in secs for p in (s[3] if s[0] == 'group' else [s])))
