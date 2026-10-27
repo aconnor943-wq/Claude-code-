@@ -103,19 +103,34 @@ h3 { font: 500 var(--h3)/1.25 var(--sans); letter-spacing: -.01em; }
 .sec-head p { margin-top: 1rem; font-size: var(--lead); color: var(--text-soft); }
 .sec-cta { margin-top: clamp(36px, 5vw, 56px); display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 2rem; }
 
-/* ---------- specials ---------- */
+/* ---------- specials: one dropdown per day ---------- */
 .week { border-top: 1px solid var(--line); }
-.week li {
-  display: grid; grid-template-columns: 9rem minmax(0, 1fr) auto; grid-template-areas: "day what price" "day desc price";
-  column-gap: 2rem; row-gap: .25rem; padding: 22px 0; border-bottom: 1px solid var(--line); align-items: baseline;
+.week li { position: relative; border-bottom: 1px solid var(--line); }
+.week summary {
+  list-style: none; cursor: pointer; display: grid; grid-template-columns: 9rem minmax(0, 1fr) auto 28px; align-items: center; column-gap: 1.5rem;
+  min-height: 64px; padding: 14px 0;
 }
-.week__day { grid-area: day; color: var(--text-soft); font-size: var(--small); letter-spacing: .08em; text-transform: uppercase; }
-.week__what { grid-area: what; font-size: var(--h3); font-weight: 500; line-height: 1.25; }
-.week__desc { grid-area: desc; color: var(--text-soft); font-size: var(--small); max-width: 56ch; }
-.week__price { grid-area: price; text-align: right; font-weight: 500; white-space: nowrap; }
-.week li.is-today { position: relative; }
-.week li.is-today::before { content: ""; position: absolute; left: -16px; top: 22px; bottom: 22px; width: 3px; border-radius: 2px; background: var(--gold); }
+.week summary::-webkit-details-marker { display: none; }
+.week summary:hover .week__what { color: var(--gold); }
+.week__day { color: var(--text-soft); font-size: var(--small); letter-spacing: .08em; text-transform: uppercase; }
+.week__what { font-size: var(--h3); font-weight: 500; line-height: 1.25; transition: color .25s var(--ease); }
+.week__price { font-weight: 500; white-space: nowrap; text-align: right; }
+.week__chev { width: 22px; height: 22px; fill: none; stroke: var(--gold); stroke-width: 1.8; transition: transform .4s var(--ease); }
+.week details[open] .week__chev { transform: rotate(180deg); }
+.week details { interpolate-size: allow-keywords; }
+.week details::details-content { block-size: 0; overflow: hidden; transition: block-size .4s var(--ease), content-visibility .4s allow-discrete; }
+.week details[open]::details-content { block-size: auto; }
+.week__desc { margin: 0 0 0 calc(9rem + 1.5rem); padding: 0 0 20px; color: var(--text-soft); max-width: 56ch; }
+.week li.is-today::before { content: ""; position: absolute; left: -16px; top: 18px; height: 28px; width: 3px; border-radius: 2px; background: var(--gold); }
 .week li.is-today .week__day { color: var(--gold); font-weight: 600; }
+
+/* ---------- photo strip ---------- */
+.gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; padding: 0 8px; background: var(--black); }
+.gallery figure { overflow: hidden; }
+.gallery img { width: 100%; height: 100%; aspect-ratio: 4 / 3; object-fit: cover; transition: transform 1.2s var(--ease); }
+.gallery__wide { grid-column: 1 / -1; }
+.gallery__wide img { aspect-ratio: 16 / 6; }
+.gallery figure:hover img { transform: scale(1.03); }
 
 /* ---------- deals: the one light section ---------- */
 .deals { background: var(--ivory); color: var(--ink); }
@@ -132,7 +147,7 @@ h3 { font: 500 var(--h3)/1.25 var(--sans); letter-spacing: -.01em; }
 
 /* ---------- taste of the menu ---------- */
 .taste { background: var(--charcoal); }
-.taste__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 3vw, 32px); }
+.taste__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(20px, 3vw, 32px); }
 .taste__card {
   display: flex; flex-direction: column; gap: .8rem; padding: 28px 26px 26px; text-decoration: none;
   background: var(--charcoal-2); border-radius: 14px; transition: transform .4s var(--ease), background-color .4s var(--ease);
@@ -220,7 +235,7 @@ h3 { font: 500 var(--h3)/1.25 var(--sans); letter-spacing: -.01em; }
   .top__nav { display: none; }
   .top .btn--sm { margin-left: auto; }
   .facts__list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .taste__grid { grid-template-columns: 1fr; }
+  .taste__grid { grid-template-columns: 1fr 1fr; }
   .bar__grid, .book__grid, .visit__grid { grid-template-columns: 1fr; }
   .bar__photo { order: -1; }
 }
@@ -230,8 +245,13 @@ h3 { font: 500 var(--h3)/1.25 var(--sans); letter-spacing: -.01em; }
   .brand span { display: none; }
   .hero__body { padding-top: 120px; }
   .hero__actions .btn--lg { width: 100%; }
-  .week li { grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "day price" "what what" "desc desc"; }
+  .week summary { grid-template-columns: minmax(0, 1fr) auto 24px; grid-template-areas: "day price chev" "what what chev"; row-gap: .2rem; }
+  .week__day { grid-area: day; } .week__what { grid-area: what; } .week__price { grid-area: price; } .week__chev { grid-area: chev; }
+  .week__desc { margin-left: 0; }
   .week li.is-today::before { left: -12px; }
+  .taste__grid { grid-template-columns: 1fr; }
+  .gallery { grid-template-columns: 1fr; padding: 0; gap: 4px; }
+  .gallery__wide img { aspect-ratio: 4 / 3; }
   .deals__grid { grid-template-columns: 1fr; }
   .foot__grid { grid-template-columns: 1fr; }
   .foot nav { justify-content: flex-start; }

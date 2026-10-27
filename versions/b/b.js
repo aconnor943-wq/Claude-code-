@@ -47,6 +47,8 @@
     el.classList.add('is-today');
     const d = el.querySelector('.week__day');
     if (d) d.textContent = `Today · ${d.textContent}`;
+    const det = el.querySelector('details');
+    if (det) det.open = true;
   });
 
   // ---------- booking: hide the fallback once OpenTable's form arrives ----------
