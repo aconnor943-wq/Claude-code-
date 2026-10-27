@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en-AU" data-light="day">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Lounge, Paradise Point · Restaurant and cocktail bar on the Esplanade</title>
+  <meta name="description" content="Share plates, steaks and fresh seafood, a lit cocktail bar and live music on Friday and Saturday nights. 44 The Esplanade, Paradise Point. Open seven days. Book a table online.">
+  <meta name="theme-color" content="#0e0d0b">
+  <link rel="icon" href="../../assets/monogram.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="b.css">
+  <script>
+    // Night after sunset in Paradise Point (Queensland, UTC+10, no daylight saving), before first paint
+    (function () {
+      var d = new Date(Date.now() + 10 * 3600e3), h = d.getUTCHours() + d.getUTCMinutes() / 60;
+      var sunset = [18.75, 18.5, 18.08, 17.58, 17.25, 17.08, 17.25, 17.5, 17.75, 18, 18.33, 18.67][d.getUTCMonth()];
+      document.documentElement.dataset.light = (h >= sunset || h < 6) ? 'night' : 'day';
+    })();
+  </script>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top" data-top>
+  <a class="brand" href="#main" aria-label="The Lounge, Paradise Point: home">
+    <svg class="mono" viewBox="0 0 48 48" aria-hidden="true"><use href="#tl"/></svg>
+    <span>The Lounge</span>
+  </a>
+  <nav class="top__nav" aria-label="Main">
+    <a href="menu.html">Menu</a>
+    <a href="#specials">Specials</a>
+    <a href="#bar">Bar</a>
+    <a href="#visit">Visit</a>
+  </nav>
+  <a class="btn btn--sm" href="#book">Book a table</a>
+</header>
+
+<main id="main">
+
+  <!-- 1. Who, what, why, and the one thing to do -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__media" aria-hidden="true">
+      <video class="hero__video" data-video="day" muted loop playsinline preload="auto" poster="../../assets/video/day-poster.jpg"><source src="../../assets/video/day.mp4" type="video/mp4"></video>
+      <video class="hero__video" data-video="night" muted loop playsinline preload="auto" poster="../../assets/video/night-poster.jpg"><source src="../../assets/video/night.mp4" type="video/mp4"></video>
+    </div>
+    <div class="hero__body">
+      <p class="hero__kicker">The Lounge · Paradise Point</p>
+      <h1 id="hero-title" class="hero__title">Seafood, share plates and cocktails on the Esplanade</h1>
+      <p class="hero__lead">A modern Australian restaurant and bar by the Broadwater. Long lunches, steaks and oysters, and live music on Friday and Saturday nights.</p>
+      <div class="hero__actions">
+        <a class="btn btn--lg" href="#book">Book a table</a>
+        <a class="link" href="menu.html">See the menu <span aria-hidden="true">→</span></a>
+      </div>
+      <p class="hero__status" data-status>Open seven days</p>
+    </div>
+  </section>
+
+  <!-- 2. Reasons to come, at a glance -->
+  <section class="facts" aria-label="At a glance">
+    <ul class="facts__list">
+      <li><strong>Open 7 days</strong><span>From 11:30am on weekends, 12pm weekdays</span></li>
+      <li><strong>Happy hour</strong><span>Monday to Friday, 4 to 6pm</span></li>
+      <li><strong>Live music</strong><span>Monday, Friday and Saturday nights</span></li>
+      <li><strong>44 The Esplanade</strong><span>Paradise Point, on the Broadwater</span></li>
+    </ul>
+  </section>
+
+  <!-- 3. This week -->
+  <section class="specials" id="specials" aria-labelledby="specials-title">
+    <div class="wrap">
+      <header class="sec-head">
+        <h2 id="specials-title">Every night has a special</h2>
+        <p>A different reason to come in each night of the week. Today's is marked.</p>
+      </header>
+      <ol class="week" data-week>
+        <li data-day="1"><span class="week__day">Monday</span><strong class="week__what">Steak special and live music</strong><span class="week__desc">Beef rib fillet cooked to your liking, crispy coated fries and garden salad</span><span class="week__price">$30</span></li>
+        <li data-day="2"><span class="week__day">Tuesday</span><strong class="week__what">Seafood platter for one</strong><span class="week__desc">Moreton Bay bug, chilli garlic prawns, Hoki battered fish, Kilpatrick oysters, fries, salad and tartare</span><span class="week__price">$36</span></li>
+        <li data-day="3"><span class="week__day">Wednesday</span><strong class="week__what">Seafood hotpot</strong><span class="week__desc">Prawns, scallops and mussels in a creamy white wine sauce with chargrilled sourdough</span><span class="week__price">$33</span></li>
+        <li data-day="4"><span class="week__day">Thursday</span><strong class="week__what">Tasty Thursday set menu</strong><span class="week__desc">Our most-loved signature dishes, two or three courses</span><span class="week__price">2 courses $60 · 3 courses $75</span></li>
+        <li data-day="5"><span class="week__day">Friday</span><strong class="week__what">Live music, 7:30 to 11pm</strong><span class="week__desc">Live music and entertainment through the evening</span></li>
+        <li data-day="6"><span class="week__day">Saturday</span><strong class="week__what">Live music, 7:30 to 11pm</strong><span class="week__desc">Live music and entertainment through the evening</span></li>
+        <li data-day="0"><span class="week__day">Sunday</span><strong class="week__what">Oyster special</strong><span class="week__desc">South Australian natural oysters with lemon</span><span class="week__price">6 oysters $25</span></li>
+      </ol>
+      <div class="sec-cta">
+        <a class="btn" href="#book">Book for this week</a>
+        <p class="fine">Prices subject to change and availability. 15% surcharge on public holidays.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. The two weekday deals, on the light section -->
+  <section class="deals" aria-labelledby="deals-title">
+    <div class="wrap">
+      <header class="sec-head">
+        <h2 id="deals-title">Weekday deals</h2>
+        <p>Monday to Friday, for a long lunch or an early drink.</p>
+      </header>
+      <div class="deals__grid">
+        <article class="deal">
+          <p class="deal__when">Monday to Friday · 4 to 6pm</p>
+          <h3 class="deal__title">Happy hour</h3>
+          <ul class="deal__list">
+            <li><span>Wines</span><span>$9</span></li>
+            <li><span>Beers</span><span>$9.50</span></li>
+            <li><span>Cocktails</span><span>$17</span></li>
+          </ul>
+          <p class="fine">Select items only.</p>
+        </article>
+        <article class="deal">
+          <p class="deal__when">Monday to Friday · 12 to 3pm</p>
+          <h3 class="deal__title">Lunch for two</h3>
+          <p class="deal__text">Two meals from the Casual Dining menu and two glasses of select wine.</p>
+          <p class="deal__price">$65</p>
+        </article>
+      </div>
+      <div class="sec-cta"><a class="btn btn--dark" href="#book">Book lunch</a></div>
+    </div>
+  </section>
+
+  <!-- 5. A taste of the menu -->
+  <section class="taste" aria-labelledby="taste-title">
+    <div class="wrap">
+      <header class="sec-head">
+        <h2 id="taste-title">From the kitchen</h2>
+        <p>Fresh seafood, share plates and steaks off the grill, made to share across the table.</p>
+      </header>
+      <div class="taste__grid">
+        <a class="taste__card" href="menu.html#oysters">
+          <h3>Oysters</h3>
+          <p>Natural, with jalapeño and lime, Kilpatrick, or as Bloody Mary shooters.</p>
+          <span class="link">Oysters <span aria-hidden="true">→</span></span>
+        </a>
+        <a class="taste__card" href="menu.html#small">
+          <h3>Small share plates</h3>
+          <p>Seared scallops, Moreton Bay bugs, king prawns, burrata, lamb cutlets and more.</p>
+          <span class="link">Share plates <span aria-hidden="true">→</span></span>
+        </a>
+        <a class="taste__card" href="menu.html#signature">
+          <h3>Signature share dishes</h3>
+          <p>Tomahawk, wagyu rump with a bug topper, and the seafood platter. For two to three.</p>
+          <span class="link">Signature dishes <span aria-hidden="true">→</span></span>
+        </a>
+      </div>
+      <div class="sec-cta"><a class="btn" href="menu.html">See the full menu</a></div>
+    </div>
+  </section>
+
+  <!-- 6. The bar -->
+  <section class="bar" id="bar" aria-labelledby="bar-title">
+    <div class="wrap bar__grid">
+      <div class="bar__text">
+        <h2 id="bar-title">The bar after dark</h2>
+        <p>Three lit arches of spirits, a long wine list and cocktails made to order. Come for happy hour and stay for dinner.</p>
+        <ul class="bar__list">
+          <li>Signature cocktails like the Mango Jalapeño Margarita and Lychee Rose Spritz</li>
+          <li>Wines by the glass from Australia, New Zealand and France</li>
+          <li>Mocktails made with non-alcoholic spirits</li>
+        </ul>
+        <a class="btn" href="#book">Book a table at the bar</a>
+      </div>
+      <figure class="bar__photo">
+        <img src="../../assets/img/glassware.jpg" alt="The back bar: arched brass-edged shelves of spirits above rows of polished stemware" width="2000" height="1125" loading="lazy" decoding="async">
+      </figure>
+    </div>
+  </section>
+
+  <!-- 7. Booking -->
+  <section class="book" id="book" aria-labelledby="book-title">
+    <div class="wrap book__grid">
+      <div class="book__text">
+        <h2 id="book-title">Book your table</h2>
+        <ul class="book__points">
+          <li>Pick a day, time and party size</li>
+          <li>Confirmed straight away by email</li>
+          <li>Groups and private events: mention it when you book</li>
+        </ul>
+      </div>
+      <div class="book__widget" data-booking>
+        <!-- OpenTable reservation widget (restaurant ID 212261) -->
+        <script src="https://www.opentable.com.au/widget/reservation/loader?rid=212261&amp;type=standard&amp;theme=wide&amp;color=1&amp;dark=true&amp;iframe=true&amp;domain=comau&amp;lang=en-AU&amp;newtab=false&amp;ot_source=Restaurant%20website"></script>
+        <p class="book__fallback">Loading available times. If nothing appears, <a class="btn" href="https://www.opentable.com.au/r/the-lounge-paradise-point" target="_blank" rel="noopener">Book on OpenTable</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Visit -->
+  <section class="visit" id="visit" aria-labelledby="visit-title">
+    <div class="wrap visit__grid">
+      <div>
+        <h2 id="visit-title">Find us on the Esplanade</h2>
+        <p class="visit__addr">44 The Esplanade<br>Paradise Point QLD 4216</p>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=The+Lounge+44+The+Esplanade+Paradise+Point+QLD+4216" target="_blank" rel="noopener">Get directions</a>
+      </div>
+      <table class="hours">
+        <caption>Opening hours</caption>
+        <tbody>
+          <tr data-day="1"><th scope="row">Monday</th><td>12pm to 9pm</td></tr>
+          <tr data-day="2"><th scope="row">Tuesday</th><td>12pm to 9pm</td></tr>
+          <tr data-day="3"><th scope="row">Wednesday</th><td>12pm to 9pm</td></tr>
+          <tr data-day="4"><th scope="row">Thursday</th><td>12pm to 9pm</td></tr>
+          <tr data-day="5"><th scope="row">Friday</th><td>12pm to 11pm</td></tr>
+          <tr data-day="6"><th scope="row">Saturday</th><td>11:30am to 11pm</td></tr>
+          <tr data-day="0"><th scope="row">Sunday</th><td>11:30am to 8pm</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__grid">
+    <div class="foot__brand">
+      <svg class="mono" viewBox="0 0 48 48" aria-hidden="true"><use href="#tl"/></svg>
+      <p>The Lounge<br><span>Paradise Point</span></p>
+    </div>
+    <nav aria-label="Footer"><a href="menu.html">Menu</a><a href="#specials">Specials</a><a href="#book">Book</a><a href="#visit">Visit</a></nav>
+    <p class="fine">Hours as listed on OpenTable; public holidays may differ. Please drink responsibly.</p>
+  </div>
+</footer>
+
+<a class="btn btn--float" href="#book" data-float>Book a table</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="tl" viewBox="0 0 48 48">
+    <g fill="none" stroke="currentColor" stroke-linecap="square">
+      <circle cx="24" cy="24" r="22" stroke-width="1.8"/>
+      <circle cx="24" cy="24" r="18.6" stroke-width="1"/>
+      <path d="M13 14.5h14M20 14.5v20" stroke-width="2.4"/>
+      <path d="M27 11v22.5h8.5" stroke-width="2.4"/>
+    </g>
+  </symbol>
+</svg>
+<script src="b.js"></script>
+</body>
+</html>
