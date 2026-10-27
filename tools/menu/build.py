@@ -24,22 +24,46 @@ def item(name, desc, tg, price, addon, cols):
         p = '<span class="m-by">Glass or bottle</span>' if price[0] else '<span class="m-by">Bottle</span>'
     return f'<li class="m-item"><span class="m-name">{e(name)}{tags(tg)}</span>{d}{a}{p}</li>'
 
-def section(s):
+CHEVRON = '<svg class="m-chev" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7.5l5 5 5-5"/></svg>'
+
+def inner(s, sub=False):
     sid, title, note, kind, cols, items, *foot = s
     if not PRICES and note and note.startswith('$'): note = None
-    out = [f'<section class="m-sec m-sec--{kind}" id="{sid}" aria-labelledby="{sid}-h">',
-           f'<h3 class="m-sec__title" id="{sid}-h">{e(title)}</h3>']
+    out = [f'<h4 class="m-sub">{e(title)}</h4>'] if sub else []
     if note: out.append(f'<p class="m-sec__note">{e(note)}</p>')
     if PRICES and cols:
         out.append('<p class="m-cols" aria-hidden="true">' + ''.join(f'<span>{e(c)}</span>' for c in cols) + '</p>')
-    cls = 'm-list' + (' m-list--two' if PRICES and cols else '')
-    out.append(f'<ul class="{cls}">' + ''.join(item(*it, cols) for it in items) + '</ul>')
+    out.append(f'<ul class="m-list m-list--{kind}">' + ''.join(item(*it, cols) for it in items) + '</ul>')
     if foot:
         f = foot[0] if PRICES else re.sub(r' \+\$[\d.]+$', '', foot[0])
         out.append(f'<p class="m-sec__note m-sec__note--after">{e(f)}</p>')
-    out.append('</section>')
     return '\n'.join(out)
 
+def dropdown(sid, title, body):
+    return (f'<details class="m-sec" id="{sid}">\n<summary><h3 class="m-sec__title">{e(title)}</h3>{CHEVRON}</summary>\n'
+            f'<div class="m-sec__body">\n{body}\n</div>\n</details>')
+
+def section(s):
+    if s[0] == 'group':
+        _, sid, title, parts = s
+        return dropdown(sid, title, '\n'.join(inner(p, sub=True) for p in parts))
+    return dropdown(s[0], s[1], inner(s))
+
+def grouped(secs, groups):
+    """Fold the named sections into single dropdowns, in place of the first one."""
+    by = {x[0]: x for x in secs}
+    folded = {k for _, _, ks in groups for k in ks}
+    out = []
+    for x in secs:
+        for gid, gt, ks in groups:
+            if x[0] == ks[0]: out.append(('group', gid, gt, [by[k] for k in ks]))
+        if x[0] not in folded: out.append(x)
+    return out
+
+DRINKS = grouped(DRINKS, [
+    ('beer', 'Beer and cider', ['tap-beer', 'bottled-beer', 'imported-beer', 'cider']),
+    ('spirits', 'Spirits', ['rum', 'vodka', 'gin', 'tequila', 'whiskey', 'bourbon', 'cognac', 'digestif']),
+])
 CHAPTERS = [('food', 'Food', FOOD), ('kids', 'Kids', KIDS), ('desserts', 'Dessert', DESSERT), ('drinks', 'Drinks', DRINKS)]
 nav = ''.join(f'<a href="#{cid}">{t}</a>' for cid, t, _ in CHAPTERS)
 body = [f'''  <section class="mp" id="menu" aria-labelledby="menu-title">
@@ -63,4 +87,4 @@ page = open(path).read()
 a = page.index('<main id="top">') + len('<main id="top">\n')
 b = page.index('</main>')
 open(path, 'w').write(page[:a] + '\n'.join(body) + page[b:])
-print('items', sum(len(s[5]) for _, _, secs in CHAPTERS for s in secs))
+print('items', sum(len(p[5]) for _, _, secs in CHAPTERS for s in secs for p in (s[3] if s[0] == 'group' else [s])))

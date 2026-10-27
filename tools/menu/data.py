@@ -90,7 +90,7 @@ KIDS = [
  ]),
 ]
 DESSERT = [
- ('dessert', 'Dessert', None, 'list', None, [
+ ('dessert', 'Desserts', None, 'list', None, [
   ('Petit four', 'assortment of house-made pastries', '', '$22', None),
   ('Crème brûlée', 'topped with berries', 'GF', '$18', None),
   ('Death by chocolate', 'berries and Chantilly cream', '', '$18', None),
