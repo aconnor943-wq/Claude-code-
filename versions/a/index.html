@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en-AU" data-light="day">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Lounge, Paradise Point</title>
+  <meta name="description" content="Bar and kitchen at 44 The Esplanade, Paradise Point, Gold Coast. Coastal plates, a lit arched bar and a terrace under the ferns. Open seven days.">
+  <meta name="theme-color" content="#0e0d0b">
+  <meta property="og:title" content="The Lounge, Paradise Point">
+  <meta property="og:description" content="Bar and kitchen on the Esplanade, Paradise Point. Open seven days.">
+  <meta property="og:image" content="assets/img/sign.jpg">
+  <link rel="icon" href="assets/monogram.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // Set the light before first paint: night after sunset in Paradise Point (Queensland, UTC+10, no daylight saving)
+    (function () {
+      var d = new Date(Date.now() + 10 * 3600e3), h = d.getUTCHours() + d.getUTCMinutes() / 60;
+      var sunset = [18.75, 18.5, 18.08, 17.58, 17.25, 17.08, 17.25, 17.5, 17.75, 18, 18.33, 18.67][d.getUTCMonth()];
+      var light = (h >= sunset || h < 6) ? 'night' : 'day';
+      try { light = sessionStorage.getItem('light') || light; } catch (e) {}
+      document.documentElement.dataset.light = light;
+      document.documentElement.classList.add('js');
+    })();
+  </script>
+</head>
+<body>
+
+<header class="bar-top" data-nav>
+  <a class="brand" href="#top" aria-label="The Lounge, Paradise Point: back to top">
+    <svg class="mono" viewBox="0 0 48 48" aria-hidden="true"><use href="#tl"/></svg>
+    <span>The Lounge</span>
+  </a>
+  <nav class="links" aria-label="Sections">
+    <a href="menu.html">Menu</a>
+    <a href="#nights">Nights</a>
+    <a href="#bar">Bar</a>
+    <a href="#visit">Visit</a>
+  </nav>
+  <div class="light-switch" role="group" aria-label="Light">
+    <button type="button" data-set-light="day" aria-pressed="true">Day</button>
+    <button type="button" data-set-light="night" aria-pressed="false">Night</button>
+  </div>
+  <a class="pill pill--small" href="#book">Book a table</a>
+</header>
+
+<main id="top">
+
+  <!-- First screen: the place itself, in the light it has right now -->
+  <section class="hero" aria-label="The Lounge">
+    <div class="hero__media">
+      <video class="hero__video hero__video--day" muted loop playsinline preload="auto" poster="assets/video/day-poster.jpg" aria-hidden="true" data-light-video="day">
+        <source src="assets/video/day.mp4" type="video/mp4">
+      </video>
+      <video class="hero__video hero__video--night" muted loop playsinline preload="auto" poster="assets/video/night-poster.jpg" aria-hidden="true" data-light-video="night">
+        <source src="assets/video/night.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="hero__scrim"></div>
+    <h1 class="hero__name"><span>The</span><span>Lounge</span></h1>
+    <div class="hero__side">
+      <p class="hero__line">Bar and kitchen on the Esplanade, Paradise&nbsp;Point.</p>
+      <p class="hero__status" data-status>Open seven days</p>
+      <div class="hero__actions">
+        <a class="pill" href="#book">Book a table</a>
+        <a class="text-link" href="menu.html">See the menu<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Day chapter -->
+  <section class="intro chapter-day" aria-label="About The Lounge">
+    <p class="intro__statement">Lunch in the light off the Broadwater, dinner by lamplight, and a bar that keeps the evening going.</p>
+    <figure class="intro__wide">
+      <img src="assets/img/terrace-tables.jpg" data-night="assets/img/night/terrace-tables.jpg" alt="The terrace set for service: timber tables and black cross-back chairs, the TL sign on the bar counter behind" width="2400" height="636" decoding="async">
+    </figure>
+    <div class="intro__pair">
+      <figure class="intro__photo intro__photo--a">
+        <video muted loop playsinline preload="none" poster="assets/video/sign-poster.jpg" width="1620" height="1080" aria-label="The lit TL monogram sign: The Lounge, Paradise Point" data-inview-video>
+          <source src="assets/video/sign.mp4" type="video/mp4">
+        </video>
+      </figure>
+      <p class="intro__note">Open seven days. Happy hour Monday to Friday, 4 to 6pm, and live music on Monday nights and Friday and Saturday from 7:30.</p>
+    </div>
+  </section>
+
+  <!-- Dusk: the week -->
+  <section class="nights" id="nights" aria-labelledby="nights-title">
+    <h2 id="nights-title" class="nights__title">Every night, a&nbsp;reason</h2>
+    <div class="nights__deals">
+      <p class="nights__deal"><strong>Happy hour</strong><span>Monday to Friday, 4 to 6pm</span><span>$9 wines, $9.50 beers, $17 cocktails (select items)</span></p>
+      <p class="nights__deal"><strong>Lunch for two</strong><span>Monday to Friday, 12 to 3pm</span><span>Two Casual Dining meals and two glasses of select wine, $65</span></p>
+    </div>
+    <ol class="nights__rows" data-week>
+      <li data-day="1"><span class="nights__day">Monday</span><span class="nights__what"><strong>Steak special + live music</strong><span class="nights__desc">Beef rib fillet cooked to your liking, served with crispy coated fries and fresh garden salad</span></span><span class="nights__price">$30</span></li>
+      <li data-day="2"><span class="nights__day">Tuesday</span><span class="nights__what"><strong>Seafood platter for one</strong><span class="nights__desc">Moreton Bay bug, chilli garlic prawns, Hoki battered fish, Kilpatrick oysters, fries, fresh garden salad and tartare</span></span><span class="nights__price">$36</span></li>
+      <li data-day="3"><span class="nights__day">Wednesday</span><span class="nights__what"><strong>Seafood hotpot special</strong><span class="nights__desc">Juicy prawns, tender scallops and fresh mussels simmered in a creamy white wine sauce with spinach, cherry tomato and Spanish onion, served with chargrilled sourdough</span></span><span class="nights__price">$33</span></li>
+      <li data-day="4"><span class="nights__day">Thursday</span><span class="nights__what"><strong>Tasty Thursday set menu</strong><span class="nights__desc">Our most-loved signature dishes, with your choice of two or three courses</span></span><span class="nights__price">2 courses $60<br>3 courses $75</span></li>
+      <li data-day="5"><span class="nights__day">Friday</span><span class="nights__what"><strong>Live music, 7:30 to 11pm</strong><span class="nights__desc">Live music and entertainment through the evening (hours may vary)</span></span><span class="nights__price"></span></li>
+      <li data-day="6"><span class="nights__day">Saturday</span><span class="nights__what"><strong>Live music, 7:30 to 11pm</strong><span class="nights__desc">Live music and entertainment through the evening (hours may vary)</span></span><span class="nights__price"></span></li>
+      <li data-day="0"><span class="nights__day">Sunday</span><span class="nights__what"><strong>Oyster special</strong><span class="nights__desc">South Australian natural oysters with lemon</span></span><span class="nights__price">6 oysters $25</span></li>
+    </ol>
+    <p class="nights__foot">Prices subject to change and availability. A 15% surcharge applies on public holidays.</p>
+  </section>
+
+  <!-- Night chapter -->
+  <section class="bar" id="bar" aria-labelledby="bar-title">
+    <h2 id="bar-title" class="bar__title">The bar after&nbsp;dark</h2>
+    <figure class="bar__lead">
+      <video muted loop playsinline preload="none" poster="assets/video/night-poster.jpg" aria-hidden="true" data-inview-video>
+        <source src="assets/video/night.mp4" type="video/mp4">
+      </video>
+    </figure>
+    <figure class="bar__img bar__img--a">
+      <img src="assets/img/glassware.jpg" data-night="assets/img/night/glassware.jpg" alt="The back bar: arched brass-edged shelves of spirits above rows of polished stemware" width="2000" height="1125" decoding="async">
+      <figcaption>Three lit arches of spirits behind the bar.</figcaption>
+    </figure>
+    <figure class="bar__img bar__img--b">
+      <img src="assets/img/bartender.jpg" data-night="assets/img/night/bartender.jpg" alt="A bartender at work under the arched shelves" width="2000" height="1125" decoding="async">
+      <figcaption>Tell the bartenders what you like and let them steer.</figcaption>
+    </figure>
+  </section>
+
+  <section class="book" id="book" aria-labelledby="book-title">
+    <div class="book__text">
+      <h2 id="book-title" class="book__title">Book a table</h2>
+      <p>Choose a day, time and party size. Your booking is confirmed by email.</p>
+      <p class="book__note">Planning a group or a private event? Ask the team when you book.</p>
+    </div>
+    <div class="book__widget" data-booking>
+      <!-- OpenTable reservation widget (restaurant ID 212261) -->
+      <script src="https://www.opentable.com.au/widget/reservation/loader?rid=212261&amp;type=standard&amp;theme=wide&amp;color=1&amp;dark=true&amp;iframe=true&amp;domain=comau&amp;lang=en-AU&amp;newtab=false&amp;ot_source=Restaurant%20website"></script>
+      <p class="book__fallback">Loading tables. If nothing appears, <a href="https://www.opentable.com.au/r/the-lounge-paradise-point" target="_blank" rel="noopener">book on OpenTable</a>.</p>
+    </div>
+  </section>
+
+  <section class="visit" id="visit" aria-label="Visit">
+    <p class="visit__row">The Lounge</p>
+    <p class="visit__row"><a href="https://www.google.com/maps/search/?api=1&amp;query=The+Lounge+44+The+Esplanade+Paradise+Point+QLD+4216" target="_blank" rel="noopener">44 The Esplanade</a></p>
+    <p class="visit__row">Paradise Point QLD 4216</p>
+    <p class="visit__row visit__hours"><span>Mon to Thu 12 to 9</span> <span>Fri 12 to 11</span></p>
+    <p class="visit__row visit__hours"><span>Sat 11:30 to 11</span> <span>Sun 11:30 to 8</span></p>
+    <p class="visit__row visit__go">Book <a class="round" href="#book" aria-label="Book a table"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a></p>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="foot__top">
+    <p>44 The Esplanade, Paradise Point QLD 4216</p>
+    <p>Hours as listed on OpenTable. Public holidays may differ.</p>
+    <a class="foot__up" href="#top">Back to top</a>
+  </div>
+  <div class="foot__close">
+    <svg class="foot__mono" viewBox="0 0 48 48" aria-hidden="true"><use href="#tl"/></svg>
+    <p class="foot__name">The Lounge</p>
+  </div>
+  <div class="foot__meta">
+    <p><a href="menu.html">Menu</a>, <a href="#nights">Nights</a>, <a href="#bar">Bar</a>, <a href="#book">Book</a></p>
+    <p>Please drink responsibly.</p>
+    <p>Paradise Point, <span data-year>2026</span></p>
+  </div>
+</footer>
+
+<!-- TL monogram, drawn after the venue's neon sign -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="tl" viewBox="0 0 48 48">
+    <g fill="none" stroke="currentColor" stroke-linecap="square">
+      <circle cx="24" cy="24" r="22" stroke-width="1.8"/>
+      <circle cx="24" cy="24" r="18.6" stroke-width="1"/>
+      <path d="M13 14.5h14M20 14.5v20" stroke-width="2.4"/>
+      <path d="M27 11v22.5h8.5" stroke-width="2.4"/>
+    </g>
+  </symbol>
+</svg>
+
+<script src="main.js" defer></script>
+</body>
+</html>
