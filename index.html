@@ -36,6 +36,7 @@
     <a href="menu.html">Menu</a>
     <a href="#specials">Specials</a>
     <a href="#bar">Bar</a>
+    <a href="#events">Events</a>
     <a href="#visit">Visit</a>
   </nav>
   <a class="btn btn--sm" href="#book">Book a table</a>
@@ -50,7 +51,7 @@
       <video class="hero__video" data-video="night" muted loop playsinline preload="none" poster="assets/video/night-poster.jpg"><source src="assets/video/night.mp4" type="video/mp4"></video>
     </div>
     <div class="hero__body">
-      <p class="hero__kicker">The Lounge · Paradise Point</p>
+      <p class="hero__kicker">The Lounge, Paradise Point</p>
       <h1 id="hero-title" class="hero__title">Steaks, seafood and cocktails on the Esplanade</h1>
       <p class="hero__lead">A modern Australian restaurant and bar by the Broadwater. Steaks off the grill, from Black Angus rib fillet to a 1kg tomahawk, fresh seafood and share plates, and live music Friday to Monday.</p>
       <div class="hero__actions">
@@ -95,10 +96,38 @@
   </section>
 
   <!-- Photos of the room. Current shots stand in until the reshoot -->
-  <section class="gallery" aria-label="Inside The Lounge">
-    <figure class="gallery__wide"><img src="assets/img/dining-room.jpg" alt="The dining room: grey banquette under a warm cove light, beach paintings along the wall, tables set" width="1206" height="547" loading="lazy" decoding="async" style="object-position: 50% 45%"></figure>
-    <figure><img src="assets/img/sign-walkway.jpg" alt="The lit TL sign on the Esplanade walkway, The Lounge, Paradise Point" width="1206" height="570" loading="lazy" decoding="async" style="object-position: 18% 50%"></figure>
-    <figure><img src="assets/img/beer-taps.jpg" alt="Beer taps on the bar: Stone &amp; Wood, Great Northern, Carlton Dry and Asahi Super Dry" width="1206" height="599" loading="lazy" decoding="async" style="object-position: 60% 50%"></figure>
+  <section class="gallery" aria-roledescription="carousel" aria-label="Photos of The Lounge">
+    <div class="gallery__track" tabindex="0" data-gallery>
+      <figure class="gallery__slide" role="group" aria-roledescription="slide" aria-label="1 of 6: The dining room">
+        <img src="assets/img/dining-room.jpg" alt="The dining room: grey banquette under a warm cove light, beach paintings along the wall, tables set" width="1206" height="547" loading="lazy" decoding="async">
+        <figcaption>The dining room</figcaption>
+      </figure>
+      <figure class="gallery__slide" role="group" aria-roledescription="slide" aria-label="2 of 6: The terrace on the Esplanade">
+        <img src="assets/img/terrace-front.jpg" alt="The terrace under the canopy and hanging ferns, marble and timber tables set for lunch" width="1146" height="648" loading="lazy" decoding="async">
+        <figcaption>The terrace on the Esplanade</figcaption>
+      </figure>
+      <figure class="gallery__slide" role="group" aria-roledescription="slide" aria-label="3 of 6: The back bar">
+        <img src="assets/img/back-bar.jpg" alt="The back bar: three brass-edged arches of spirits above rows of polished stemware" width="1206" height="645" loading="lazy" decoding="async">
+        <figcaption>The back bar</figcaption>
+      </figure>
+      <figure class="gallery__slide" role="group" aria-roledescription="slide" aria-label="4 of 6: Out the front">
+        <img src="assets/img/terrace-bar.jpg" alt="The terrace tables in front of the open bar windows and the TL sign" width="1206" height="625" loading="lazy" decoding="async">
+        <figcaption>Out the front</figcaption>
+      </figure>
+      <figure class="gallery__slide" role="group" aria-roledescription="slide" aria-label="5 of 6: The sign on the Esplanade">
+        <img src="assets/img/sign-walkway.jpg" alt="The lit TL sign on the Esplanade walkway" width="1206" height="570" loading="lazy" decoding="async">
+        <figcaption>The sign on the Esplanade</figcaption>
+      </figure>
+      <figure class="gallery__slide" role="group" aria-roledescription="slide" aria-label="6 of 6: On tap">
+        <img src="assets/img/beer-taps.jpg" alt="Beer taps on the bar: Stone &amp; Wood, Great Northern, Carlton Dry and Asahi Super Dry" width="1206" height="599" loading="lazy" decoding="async">
+        <figcaption>On tap</figcaption>
+      </figure>
+    </div>
+    <div class="gallery__controls">
+      <button class="gallery__btn" type="button" data-prev aria-label="Previous photo"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 5l-5 5 5 5"/></svg></button>
+      <p class="gallery__count" aria-live="polite" data-count>1 / 6</p>
+      <button class="gallery__btn" type="button" data-next aria-label="Next photo"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 5l5 5-5 5"/></svg></button>
+    </div>
   </section>
 
   <!-- 4. The two weekday deals, on the light section -->
@@ -168,17 +197,32 @@
     <div class="wrap bar__grid">
       <div class="bar__text">
         <h2 id="bar-title">The bar after dark</h2>
-        <p>Three lit arches of spirits, a long wine list and cocktails made to order. Come for happy hour and stay for dinner.</p>
+        <p>Cocktails made to order, wine by the glass and cold beer on tap. Come in for happy hour and stay for dinner.</p>
         <ul class="bar__list">
-          <li>Signature cocktails like the Mango Jalapeño Margarita and Lychee Rose Spritz</li>
+          <li>Signature cocktails like the Mango Jalapeño Margarita and the Lychee Rose Spritz</li>
           <li>Wines by the glass from Australia, New Zealand and France</li>
-          <li>Mocktails made with non-alcoholic spirits</li>
+          <li>Alcohol-free cocktails too, like the Nada Colada and No Mi's Margarita</li>
         </ul>
         <a class="btn" href="#book">Book a table at the bar</a>
       </div>
       <figure class="bar__photo">
         <img src="assets/img/back-bar.jpg" alt="The back bar: three brass-edged arches of spirits above rows of polished stemware" width="1206" height="645" loading="lazy" decoding="async" style="object-position: 45% 50%">
       </figure>
+    </div>
+  </section>
+
+  <!-- Events: race days on the big screen, DJs -->
+  <section class="events" id="events" aria-labelledby="events-title">
+    <div class="wrap events__grid">
+      <figure class="events__photo">
+        <img src="assets/img/events-race-day.jpg" alt="Melbourne Cup day at The Lounge: the race on the big screen above the banquette, a DJ at the decks by the open windows" width="1600" height="1200" loading="lazy" decoding="async">
+      </figure>
+      <div class="events__text">
+        <h2 id="events-title">Big days on the big screen</h2>
+        <p>Race days like the Melbourne Cup go up on the big screen, with a DJ on the decks through the afternoon. Watch the big moments with a cocktail in hand, on the Broadwater.</p>
+        <p class="events__note">Planning a birthday, work drinks or a group celebration? Let us know when you book.</p>
+        <a class="btn" href="#book">Book for the next big day</a>
+      </div>
     </div>
   </section>
 

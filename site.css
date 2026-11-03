@@ -80,11 +80,13 @@ h3 { font: 500 var(--h3)/1.25 var(--sans); letter-spacing: -.01em; }
 .hero__media, .hero__video { position: absolute; inset: 0; width: 100%; height: 100%; }
 .hero__video { object-fit: cover; opacity: 0; transition: opacity 1.6s var(--ease); }
 [data-light="day"] [data-video="day"], [data-light="night"] [data-video="night"] { opacity: 1; }
-.hero__media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(14,13,11,.55) 0%, rgba(14,13,11,.35) 35%, rgba(14,13,11,.92) 100%); }
+.hero__media::after { content: ""; position: absolute; inset: 0; background:
+  linear-gradient(90deg, rgba(14,13,11,.82) 0%, rgba(14,13,11,.62) 42%, rgba(14,13,11,.18) 78%),
+  linear-gradient(180deg, rgba(14,13,11,.45) 0%, rgba(14,13,11,0) 30%, rgba(14,13,11,.9) 100%); }
 .hero__body { position: relative; max-width: var(--wrap); width: 100%; margin: 0 auto; padding: 140px var(--pad) clamp(56px, 9vh, 104px); }
-.hero__kicker { font-size: var(--small); letter-spacing: .14em; text-transform: uppercase; color: var(--text-soft); margin-bottom: 1.2rem; }
-.hero__title { font-size: var(--h1); max-width: 15ch; }
-.hero__lead { font-size: var(--lead); max-width: 46ch; margin-top: 1.4rem; color: var(--text-soft); }
+.hero__kicker { font-size: var(--small); font-weight: 500; letter-spacing: .04em; color: var(--text); margin-bottom: 1.2rem; }
+.hero__title { font-size: var(--h1); max-width: 15ch; text-shadow: 0 2px 24px rgba(0,0,0,.35); }
+.hero__lead { font-size: var(--lead); max-width: 44ch; margin-top: 1.4rem; color: var(--text); }
 .hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 2rem; margin-top: 2.2rem; }
 .hero__status { display: flex; align-items: center; gap: .55rem; margin-top: 1.6rem; font-size: var(--small); color: var(--text-soft); }
 .hero__status .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
@@ -125,12 +127,25 @@ h3 { font: 500 var(--h3)/1.25 var(--sans); letter-spacing: -.01em; }
 .week li.is-today .week__day { color: var(--gold); font-weight: 600; }
 
 /* ---------- photo strip ---------- */
-.gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; padding: 0 8px; background: var(--black); }
-.gallery figure { overflow: hidden; }
-.gallery img { width: 100%; height: 100%; aspect-ratio: 4 / 3; object-fit: cover; transition: transform 1.2s var(--ease); }
-.gallery__wide { grid-column: 1 / -1; }
-.gallery__wide img { aspect-ratio: 16 / 6; }
-.gallery figure:hover img { transform: scale(1.03); }
+.gallery { padding: var(--section) 0 calc(var(--section) * .6); }
+.gallery__track {
+  display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none;
+  padding: 0 max(var(--pad), calc((100vw - var(--wrap)) / 2 + var(--pad)));
+  scroll-padding-inline: max(var(--pad), calc((100vw - var(--wrap)) / 2 + var(--pad)));
+}
+.gallery__track::-webkit-scrollbar { display: none; }
+.gallery__slide { flex: 0 0 min(100%, calc(var(--wrap) - var(--pad) * 2)); scroll-snap-align: start; }
+.gallery__slide img { width: 100%; height: auto; aspect-ratio: 2 / 1; object-fit: cover; border-radius: 14px; background: var(--charcoal); }
+.gallery__slide figcaption { margin-top: .8rem; font-size: var(--small); color: var(--text-soft); }
+.gallery__controls { max-width: var(--wrap); margin: 1.2rem auto 0; padding: 0 var(--pad); display: flex; align-items: center; gap: 1rem; }
+.gallery__count { min-width: 3.5rem; text-align: center; font-variant-numeric: tabular-nums; color: var(--text-soft); }
+.gallery__btn {
+  width: 48px; height: 48px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%;
+  background: var(--charcoal-2); color: var(--gold); cursor: pointer; transition: background-color .25s var(--ease), opacity .25s var(--ease);
+}
+.gallery__btn svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; }
+.gallery__btn:hover { background: #2f2b25; }
+.gallery__btn:disabled { opacity: .35; cursor: default; }
 
 /* ---------- deals: the one light section ---------- */
 .deals { background: var(--ivory); color: var(--ink); }
@@ -163,6 +178,13 @@ h3 { font: 500 var(--h3)/1.25 var(--sans); letter-spacing: -.01em; }
 .bar__list li { position: relative; padding: .45rem 0 .45rem 1.4rem; }
 .bar__list li::before { content: ""; position: absolute; left: 0; top: 1.05em; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
 .bar__photo img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 14px; }
+
+/* ---------- events ---------- */
+.events { padding: var(--section) 0; border-top: 1px solid var(--line); }
+.events__grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(32px, 5vw, 80px); align-items: center; }
+.events__photo img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 14px; }
+.events__text p { margin-top: 1.2rem; font-size: var(--lead); color: var(--text); max-width: 38ch; }
+.events__text .events__note { font-size: var(--body); color: var(--text-soft); margin-bottom: 2rem; }
 
 /* ---------- booking ---------- */
 .book { background: var(--charcoal); }
@@ -236,7 +258,7 @@ h3 { font: 500 var(--h3)/1.25 var(--sans); letter-spacing: -.01em; }
   .top .btn--sm { margin-left: auto; }
   .facts__list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .taste__grid { grid-template-columns: 1fr 1fr; }
-  .bar__grid, .book__grid, .visit__grid { grid-template-columns: 1fr; }
+  .bar__grid, .book__grid, .visit__grid, .events__grid { grid-template-columns: 1fr; }
   .bar__photo { order: -1; }
 }
 
@@ -250,8 +272,9 @@ h3 { font: 500 var(--h3)/1.25 var(--sans); letter-spacing: -.01em; }
   .week__desc { margin-left: 0; }
   .week li.is-today::before { left: -12px; }
   .taste__grid { grid-template-columns: 1fr; }
-  .gallery { grid-template-columns: 1fr; padding: 0; gap: 4px; }
-  .gallery__wide img { aspect-ratio: 4 / 3; }
+  .gallery__track { gap: 10px; }
+  .gallery__slide { flex-basis: 88%; }
+  .gallery__slide img { aspect-ratio: 3 / 2; }
   .deals__grid { grid-template-columns: 1fr; }
   .foot__grid { grid-template-columns: 1fr; }
   .foot nav { justify-content: flex-start; }

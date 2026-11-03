@@ -51,6 +51,31 @@
     if (det) det.open = true;
   });
 
+  // ---------- photo slider: arrows, swipe and a counter ----------
+  const track = document.querySelector('[data-gallery]');
+  if (track) {
+    const slides = [...track.children];
+    const prev = document.querySelector('[data-prev]');
+    const next = document.querySelector('[data-next]');
+    const count = document.querySelector('[data-count]');
+    const current = () => Math.round(track.scrollLeft / (slides[1].offsetLeft - slides[0].offsetLeft));
+    const show = () => {
+      const i = Math.min(current(), slides.length - 1);
+      count.textContent = `${i + 1} / ${slides.length}`;
+      prev.disabled = track.scrollLeft < 4;
+      next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
+    };
+    const go = (step) => {
+      const i = Math.max(0, Math.min(slides.length - 1, current() + step));
+      track.scrollTo({ left: slides[i].offsetLeft - slides[0].offsetLeft, behavior: reduceMotion ? 'auto' : 'smooth' });
+    };
+    prev.addEventListener('click', () => go(-1));
+    next.addEventListener('click', () => go(1));
+    let t; track.addEventListener('scroll', () => { clearTimeout(t); t = setTimeout(show, 60); }, { passive: true });
+    window.addEventListener('resize', show);
+    show();
+  }
+
   // ---------- booking: hide the fallback once OpenTable's form arrives ----------
   const widget = document.querySelector('[data-booking]');
   if (widget) {
