@@ -79,6 +79,15 @@
   // ---------- booking: hide the fallback once OpenTable's form arrives ----------
   const widget = document.querySelector('[data-booking]');
   if (widget) {
+    // OpenTable's loader is added after the page has loaded, so a slow OpenTable never holds up the page
+    const addOpenTable = () => {
+      if (!widget.dataset.otSrc || widget.querySelector('script')) return;
+      const s = document.createElement('script');
+      s.src = widget.dataset.otSrc;
+      widget.insertBefore(s, widget.firstChild);
+    };
+    if (document.readyState === 'complete') addOpenTable();
+    else window.addEventListener('load', addOpenTable);
     const loaded = () => widget.querySelector('iframe') && widget.classList.add('is-loaded');
     if (!loaded()) new MutationObserver((_, mo) => { if (loaded()) mo.disconnect(); }).observe(widget, { childList: true, subtree: true });
   }
