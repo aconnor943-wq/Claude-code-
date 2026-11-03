@@ -72,7 +72,7 @@ body = [f'''  <section class="mp" id="menu" aria-labelledby="menu-title">
     <header class="mp__head">
       <h1 id="menu-title" class="mp__title">Menu</h1>
     </header>
-    <nav class="mp__nav" aria-label="Menu sections">{nav}<a href="index.html#nights">Weekly specials</a></nav>''']
+    <nav class="mp__nav" aria-label="Menu sections">{nav}<a href="index.html#specials">Weekly specials</a></nav>''']
 for cid, _, t, secs in CHAPTERS:
     body.append(f'    <div class="mp__chapter" id="{cid}">\n      <h2 class="mp__chapter-title">{t}</h2>\n      <div class="mp__grid mp__grid--{cid}">')
     body += ['        ' + section(s).replace('\n', '\n        ') for s in secs]
@@ -81,7 +81,7 @@ key = ' · '.join(f'{k} {v.lower()}' for k, v in TAGS.items())
 body.append(f'''    <footer class="mp__foot">
       <p>{key}</p>
       <p>{'Prices subject to change and availability. ' if PRICES else 'Subject to change and availability. '}A 15% surcharge applies on public holidays.</p>
-      <p><a class="pill" href="index.html#book">Book a table</a></p>
+      <p><a class="btn" href="index.html#book">Book a table</a></p>
     </footer>
   </section>
 ''')

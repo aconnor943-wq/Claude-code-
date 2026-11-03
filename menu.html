@@ -4,46 +4,38 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Menu · The Lounge, Paradise Point</title>
-  <meta name="description" content="The menu at The Lounge, 44 The Esplanade, Paradise Point: oysters, scallops, calamari, Moreton Bay bugs, steaks and the weekly specials.">
+  <meta name="description" content="The full menu at The Lounge, Paradise Point: oysters, share plates, steaks, signature share dishes, casual dining, kids, desserts, cocktails, wine and beer.">
   <meta name="theme-color" content="#0e0d0b">
-  <meta property="og:title" content="The Lounge, Paradise Point">
-  <meta property="og:description" content="Bar and kitchen on the Esplanade, Paradise Point. Open seven days.">
-  <meta property="og:image" content="assets/img/sign.jpg">
   <link rel="icon" href="assets/monogram.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
   <script>
-    // Set the light before first paint: night after sunset in Paradise Point (Queensland, UTC+10, no daylight saving)
+    // Night after sunset in Paradise Point (Queensland, UTC+10, no daylight saving), before first paint
     (function () {
       var d = new Date(Date.now() + 10 * 3600e3), h = d.getUTCHours() + d.getUTCMinutes() / 60;
       var sunset = [18.75, 18.5, 18.08, 17.58, 17.25, 17.08, 17.25, 17.5, 17.75, 18, 18.33, 18.67][d.getUTCMonth()];
-      var light = (h >= sunset || h < 6) ? 'night' : 'day';
-      try { light = sessionStorage.getItem('light') || light; } catch (e) {}
-      document.documentElement.dataset.light = light;
-      document.documentElement.classList.add('js');
+      document.documentElement.dataset.light = (h >= sunset || h < 6) ? 'night' : 'day';
     })();
   </script>
 </head>
-<body class="page-menu">
+<body>
 
-<header class="bar-top is-solid" data-nav>
+<a class="skip" href="#top">Skip to content</a>
+
+<header class="top is-solid" data-top>
   <a class="brand" href="index.html" aria-label="The Lounge, Paradise Point: home">
     <svg class="mono" viewBox="0 0 48 48" aria-hidden="true"><use href="#tl"/></svg>
     <span>The Lounge</span>
   </a>
-  <nav class="links" aria-label="Sections">
-    <a href="#menu">Menu</a>
-    <a href="index.html#nights">Nights</a>
+  <nav class="top__nav" aria-label="Main">
+    <a href="menu.html">Menu</a>
+    <a href="index.html#specials">Specials</a>
     <a href="index.html#bar">Bar</a>
     <a href="index.html#visit">Visit</a>
   </nav>
-  <div class="light-switch" role="group" aria-label="Light">
-    <button type="button" data-set-light="day" aria-pressed="true">Day</button>
-    <button type="button" data-set-light="night" aria-pressed="false">Night</button>
-  </div>
-  <a class="pill pill--small" href="index.html#book">Book a table</a>
+  <a class="btn btn--sm" href="index.html#book">Book a table</a>
 </header>
 
 <main id="top">
@@ -51,7 +43,7 @@
     <header class="mp__head">
       <h1 id="menu-title" class="mp__title">Menu</h1>
     </header>
-    <nav class="mp__nav" aria-label="Menu sections"><a href="#food">Food</a><a href="#kids">Kids</a><a href="#desserts">Dessert</a><a href="#drinks">Drinks</a><a href="index.html#nights">Weekly specials</a></nav>
+    <nav class="mp__nav" aria-label="Menu sections"><a href="#food">Food</a><a href="#kids">Kids</a><a href="#desserts">Dessert</a><a href="#drinks">Drinks</a><a href="index.html#specials">Weekly specials</a></nav>
     <div class="mp__chapter" id="food">
       <h2 class="mp__chapter-title">From the kitchen</h2>
       <div class="mp__grid mp__grid--food">
@@ -249,29 +241,24 @@
     <footer class="mp__foot">
       <p>GF gluten-free · GFO gluten-free option · A australian · I imported · M mixed</p>
       <p>Subject to change and availability. A 15% surcharge applies on public holidays.</p>
-      <p><a class="pill" href="index.html#book">Book a table</a></p>
+      <p><a class="btn" href="index.html#book">Book a table</a></p>
     </footer>
   </section>
 </main>
 
 <footer class="foot">
-  <div class="foot__top">
-    <p>44 The Esplanade, Paradise Point QLD 4216</p>
-    <p>Hours as listed on OpenTable. Public holidays may differ.</p>
-    <a class="foot__up" href="#top">Back to top</a>
-  </div>
-  <div class="foot__close">
-    <svg class="foot__mono" viewBox="0 0 48 48" aria-hidden="true"><use href="#tl"/></svg>
-    <p class="foot__name">The Lounge</p>
-  </div>
-  <div class="foot__meta">
-    <p><a href="menu.html">Menu</a>, <a href="index.html#nights">Nights</a>, <a href="index.html#bar">Bar</a>, <a href="index.html#book">Book</a></p>
-    <p>Please drink responsibly.</p>
-    <p>Paradise Point, <span data-year>2026</span></p>
+  <div class="wrap foot__grid">
+    <div class="foot__brand">
+      <svg class="mono" viewBox="0 0 48 48" aria-hidden="true"><use href="#tl"/></svg>
+      <p>The Lounge<br><span>Paradise Point</span></p>
+    </div>
+    <nav aria-label="Footer"><a href="menu.html">Menu</a><a href="index.html#specials">Specials</a><a href="index.html#book">Book</a><a href="index.html#visit">Visit</a></nav>
+    <p class="fine">Hours as listed on OpenTable; public holidays may differ. Please drink responsibly.</p>
   </div>
 </footer>
 
-<!-- TL monogram, drawn after the venue's neon sign -->
+<a class="btn btn--float is-on" href="index.html#book">Book a table</a>
+
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="tl" viewBox="0 0 48 48">
     <g fill="none" stroke="currentColor" stroke-linecap="square">
@@ -282,27 +269,6 @@
     </g>
   </symbol>
 </svg>
-
-<script src="main.js" defer></script>
-<script>
-  // Day / Night switch, same as the front page
-  (function () {
-    var root = document.documentElement;
-    var btns = document.querySelectorAll('[data-set-light]');
-    var mark = function () { btns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.setLight === root.dataset.light)); }); };
-    btns.forEach(function (b) { b.addEventListener('click', function () {
-      root.dataset.light = b.dataset.setLight; mark();
-      try { sessionStorage.setItem('light', b.dataset.setLight); } catch (e) {}
-    }); });
-    mark();
-    var y = document.querySelector('[data-year]'); if (y) y.textContent = new Date().getFullYear();
-    // a link straight to a section (menu.html#oysters) opens that dropdown
-    var openFromHash = function () {
-      var el = location.hash && document.getElementById(location.hash.slice(1));
-      if (el && el.tagName === 'DETAILS') { el.open = true; el.scrollIntoView(); }
-    };
-    openFromHash(); window.addEventListener('hashchange', openFromHash);
-  })();
-</script>
+<script src="site.js"></script>
 </body>
 </html>
