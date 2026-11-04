@@ -200,7 +200,10 @@ h3 { font: 500 var(--h3)/1.25 var(--sans); letter-spacing: -.01em; }
 
 /* ---------- visit ---------- */
 .visit__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 80px); align-items: start; }
-.visit__addr { font-size: var(--lead); margin: 1.2rem 0 2rem; }
+.visit__addr { font-size: var(--lead); margin: 1.2rem 0 .6rem; }
+.visit__phone { margin-bottom: 2rem; font-size: var(--lead); }
+.visit__phone a, .book__call a, .foot__phone { display: inline-block; padding: 6px 0; color: var(--text); font-weight: 500; text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: .3em; }
+.book__call { margin-top: 1.4rem; color: var(--text-soft); }
 .hours { width: 100%; border-collapse: collapse; }
 .hours caption { text-align: left; font-weight: 600; padding-bottom: .8rem; }
 .hours th, .hours td { padding: .7rem 0; border-bottom: 1px solid var(--line); text-align: left; font-weight: 400; }

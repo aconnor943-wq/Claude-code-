@@ -9,7 +9,7 @@ Static website for The Lounge, Paradise Point (Gold Coast). No build step: open 
 - `photos/` — full-resolution graded stills plus 4:5 crops for social
 
 ## Still to confirm
-- Phone number (not on the site yet)
+- Phone: 0488 442 224 (Visit, Book and the footer on both pages; also in the Google listing details)
 - Bookings use the OpenTable widget for restaurant ID 212261 (`index.html`, Book section), confirmed from the venue's OpenTable admin
 - Opening hours and weekly specials are taken from the OpenTable listing; hours also live in `site.js` (`HOURS`) for the "open now" indicator
 
