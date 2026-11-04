@@ -204,6 +204,13 @@ h3 { font: 500 var(--h3)/1.25 var(--sans); letter-spacing: -.01em; }
 .hours td { text-align: right; color: var(--text-soft); }
 .hours tr.is-today th, .hours tr.is-today td { color: var(--gold); font-weight: 600; }
 
+/* ---------- reviews ---------- */
+.review { border-top: 1px solid var(--line); padding: clamp(64px, 8vw, 104px) 0; text-align: center; }
+.review__inner { display: grid; justify-items: center; gap: 1rem; }
+.review__stars { width: 120px; height: 22px; color: var(--gold); }
+.review h2 { font-size: clamp(1.9rem, 1.4rem + 1.8vw, 2.8rem); }
+.review p { color: var(--text-soft); font-size: var(--lead); margin-bottom: .8rem; }
+
 /* ---------- footer ---------- */
 .foot { border-top: 1px solid var(--line); padding: 48px 0 110px; }
 .foot__grid { display: grid; grid-template-columns: auto 1fr auto; gap: 1.5rem 3rem; align-items: center; }
