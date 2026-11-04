@@ -209,7 +209,7 @@ h3 { font: 500 var(--h3)/1.25 var(--sans); letter-spacing: -.01em; }
 .review__inner { display: grid; justify-items: center; gap: 1rem; }
 .review__stars { width: 120px; height: 22px; color: var(--gold); }
 .review h2 { font-size: clamp(1.9rem, 1.4rem + 1.8vw, 2.8rem); }
-.review p { color: var(--text-soft); font-size: var(--lead); margin-bottom: .8rem; }
+.review p { color: var(--text-soft); font-size: var(--lead); max-width: 34ch; margin-bottom: .8rem; }
 
 /* ---------- footer ---------- */
 .foot { border-top: 1px solid var(--line); padding: 48px 0 110px; }
