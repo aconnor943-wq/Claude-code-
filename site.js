@@ -30,6 +30,14 @@
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
 
+  // ---------- notice bar: shows only while it has text and its end date has not passed ----------
+  const notice = document.querySelector('[data-notice]');
+  if (notice && notice.textContent.trim()) {
+    const until = notice.dataset.until;
+    const today = new Date(Date.now() + 10 * 3600e3).toISOString().slice(0, 10);
+    if (!until || today <= until) notice.hidden = false;
+  }
+
   // ---------- open now, and today's special and hours ----------
   const HOURS = { 0: [11.5, 20], 1: [12, 21], 2: [12, 21], 3: [12, 21], 4: [12, 21], 5: [12, 23], 6: [11.5, 23] };
   const fmt = (h) => {

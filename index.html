@@ -6,10 +6,77 @@
   <title>The Lounge, Paradise Point · Restaurant and cocktail bar on the Esplanade</title>
   <meta name="description" content="Steaks off the grill, fresh seafood, share plates, a lit cocktail bar and live music Friday to Monday. 44 The Esplanade, Paradise Point. Open seven days. Book a table online.">
   <meta name="theme-color" content="#0e0d0b">
+  <meta property="og:type" content="restaurant">
+  <meta property="og:site_name" content="The Lounge, Paradise Point">
   <meta property="og:title" content="The Lounge, Paradise Point">
   <meta property="og:description" content="Steaks, seafood and cocktails on the Esplanade. Open seven days. Book a table online.">
-  <meta property="og:image" content="assets/img/sign-walkway.jpg">
+  <meta property="og:url" content="https://the-lounge-paradise-point-preview.netlify.app/">
+  <meta property="og:image" content="https://the-lounge-paradise-point-preview.netlify.app/assets/img/share.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The lit TL sign on the Esplanade: The Lounge, Paradise Point">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Tells Google the restaurant's details (hours, address, menu, booking) -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "The Lounge",
+  "alternateName": "The Lounge, Paradise Point",
+  "description": "Modern Australian restaurant and cocktail bar on the Esplanade, Paradise Point: steaks off the grill, fresh seafood and share plates, with live music Friday to Monday.",
+  "url": "https://the-lounge-paradise-point-preview.netlify.app/",
+  "image": "https://the-lounge-paradise-point-preview.netlify.app/assets/img/share.jpg",
+  "servesCuisine": [
+    "Modern Australian",
+    "Seafood",
+    "Steakhouse"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "44 The Esplanade",
+    "addressLocality": "Paradise Point",
+    "addressRegion": "QLD",
+    "postalCode": "4216",
+    "addressCountry": "AU"
+  },
+  "hasMenu": "https://the-lounge-paradise-point-preview.netlify.app/menu.html",
+  "acceptsReservations": "https://www.opentable.com.au/restref/client/?rid=212261&restref=212261&lang=en-AU",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday"
+      ],
+      "opens": "12:00",
+      "closes": "21:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Friday",
+      "opens": "12:00",
+      "closes": "23:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "11:30",
+      "closes": "23:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Sunday",
+      "opens": "11:30",
+      "closes": "20:00"
+    }
+  ]
+}
+  </script>
   <link rel="icon" href="assets/monogram.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -51,6 +118,8 @@
       <video class="hero__video" data-video="night" muted loop playsinline preload="none" poster="assets/video/night-poster.jpg"><source src="assets/video/night.mp4" type="video/mp4"></video>
     </div>
     <div class="hero__body">
+      <!-- Notice bar: type a message and an end date (YYYY-MM-DD) to show it; it hides itself after that date -->
+      <p class="notice" data-notice data-until="" hidden></p>
       <p class="hero__kicker">The Lounge, Paradise Point</p>
       <h1 id="hero-title" class="hero__title">Steaks, seafood and cocktails on the Esplanade</h1>
       <p class="hero__lead">A modern Australian restaurant and bar by the Broadwater. Steaks off the grill, from Black Angus rib fillet to a 1kg tomahawk, fresh seafood and share plates, and live music Friday to Monday.</p>
