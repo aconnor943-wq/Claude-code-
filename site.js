@@ -68,10 +68,11 @@
     const count = document.querySelector('[data-count]');
     const current = () => Math.round(track.scrollLeft / (slides[1].offsetLeft - slides[0].offsetLeft));
     const show = () => {
-      const i = Math.min(current(), slides.length - 1);
+      const atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
+      const i = atEnd ? slides.length - 1 : Math.min(current(), slides.length - 1);
       count.textContent = `${i + 1} / ${slides.length}`;
       prev.disabled = track.scrollLeft < 4;
-      next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
+      next.disabled = atEnd;
     };
     const go = (step) => {
       const i = Math.max(0, Math.min(slides.length - 1, current() + step));
