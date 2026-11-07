@@ -72,6 +72,7 @@ body = [f'''  <section class="mp" id="menu" aria-labelledby="menu-title">
     <header class="mp__head">
       <h1 id="menu-title" class="mp__title">Menu</h1>
     </header>
+    <figure class="mp__photo"><img src="assets/img/menu-table-wide.jpg" alt="A Lounge menu with the gold TL logo on a marble table, the windows open to the Esplanade" width="1440" height="810" decoding="async"></figure>
     <nav class="mp__nav" aria-label="Menu sections">{nav}<a href="index.html#specials">Weekly specials</a></nav>''']
 for cid, _, t, secs in CHAPTERS:
     body.append(f'    <div class="mp__chapter" id="{cid}">\n      <h2 class="mp__chapter-title">{t}</h2>\n      <div class="mp__grid mp__grid--{cid}">')

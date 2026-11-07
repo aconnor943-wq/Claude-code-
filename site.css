@@ -200,6 +200,8 @@ h3 { font: 500 var(--h3)/1.25 var(--sans); letter-spacing: -.01em; }
 
 /* ---------- visit ---------- */
 .visit__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 80px); align-items: start; }
+.visit__photo { margin-bottom: clamp(40px, 5vw, 72px); }
+.visit__photo img { width: 100%; height: auto; aspect-ratio: 16 / 7; object-fit: cover; border-radius: 14px; }
 .visit__addr { font-size: var(--lead); margin: 1.2rem 0 .6rem; }
 .visit__phone { margin-bottom: 2rem; font-size: var(--lead); }
 .visit__phone a, .book__call a, .foot__phone { display: inline-block; padding: 6px 0; color: var(--text); font-weight: 500; text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: .3em; }
@@ -244,6 +246,8 @@ h3 { font: 500 var(--h3)/1.25 var(--sans); letter-spacing: -.01em; }
 .mp { max-width: 900px; margin: 0 auto; padding: 130px var(--pad) var(--section); }
 .mp__title { font: 600 var(--h1)/1 var(--serif); }
 .mp__head p { margin-top: 1rem; color: var(--text-soft); font-size: var(--lead); }
+.mp__photo { margin-top: clamp(28px, 4vw, 48px); }
+.mp__photo img { width: 100%; height: auto; aspect-ratio: 16 / 8; object-fit: cover; object-position: 30% 50%; border-radius: 14px; }
 .mp__nav { position: sticky; top: 64px; z-index: 5; display: flex; gap: .5rem; overflow-x: auto; scrollbar-width: none; margin: 32px calc(var(--pad) * -1) 0; padding: 12px var(--pad); background: var(--black); border-bottom: 1px solid var(--line); }
 .mp__nav::-webkit-scrollbar { display: none; }
 .mp__nav a { flex: none; padding: .45rem 1rem; border-radius: 999px; background: var(--charcoal-2); text-decoration: none; font-size: .95rem; }
