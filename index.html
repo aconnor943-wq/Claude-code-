@@ -115,7 +115,10 @@
   <!-- 1. Who, what, why, and the one thing to do -->
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero__media">
-      <img class="hero__img" src="assets/img/hero-dining.jpg" alt="The dining room: banquette seating under warm cove lighting, beach paintings on the wall, marble tables set" width="1932" height="1450" fetchpriority="high" decoding="async">
+      <picture>
+        <source media="(max-width: 640px)" srcset="assets/img/hero-room-tall.jpg">
+        <img class="hero__img" src="assets/img/hero-room.jpg" alt="The dining room: a long banquette under warm cove lighting, beach paintings along the wall, tables set for service" width="1932" height="1180" fetchpriority="high" decoding="async">
+      </picture>
     </div>
     <div class="hero__body">
       <!-- Notice bar: type a message and an end date (YYYY-MM-DD) to show it; it hides itself after that date -->
@@ -320,7 +323,7 @@
 
   <!-- 8. Visit -->
   <section class="visit" id="visit" aria-labelledby="visit-title">
-    <figure class="wrap visit__photo"><img src="assets/img/front-windows-wide.jpg" alt="High tables by the open front windows, the TL sign and hanging ferns on the terrace outside" width="1440" height="810" loading="lazy" decoding="async"></figure>
+    <figure class="wrap visit__photo"><img class="visit__photo--tall" src="assets/img/front-sign.jpg" alt="The lit TL sign under the open front window on the Esplanade, the big screen and bar inside" width="1512" height="1010" loading="lazy" decoding="async"></figure>
     <div class="wrap visit__grid">
       <div>
         <h2 id="visit-title">Find us on the Esplanade</h2>
